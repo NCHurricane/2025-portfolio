@@ -1,0 +1,101 @@
+[
+    {
+        "thumb": "assets/img/gallery/20241015-comet-thumb.jpg",
+        "full": "assets/img/gallery/20241015-comet.jpg",
+        "caption": "Tsuchinshan-ATLAS Comet",
+        "date": "2024-10-15",
+        "impDate": "October 15, 2024",
+        "camera": "Sony ZV-E-10",
+        "location": "Washington, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20250604-stormy-thumb.jpg",
+        "full": "assets/img/gallery/20250604-stormy.jpg",
+        "caption": "Stormy the Cat, Judging You",
+        "date": "2023-07-12",
+        "impDate": "July 12, 2023",
+        "camera": "Samsung S23 Ultra",
+        "location": "NCHurricat House"
+    },
+    {
+        "thumb": "assets/img/gallery/20160818-holden-beach-thumb.jpg",
+        "full": "assets/img/gallery/20160818-holden-beach.jpg",
+        "caption": "Shelf Cloud Over Holden Beach",
+        "date": "2016-08-18",
+        "impDate": "August 18, 2016",
+        "camera": "iPhone 14 Pro",
+        "location": "Holden Beach, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20190622-dragonfly-thumb.jpg",
+        "full": "assets/img/gallery/20190622-dragonfly.jpg",
+        "caption": "Dragonfly Waiting for Clearance",
+        "date": "2019-06-22",
+        "impDate": "June 22, 2019",
+        "camera": "Samsung Galaxy Note 20 Ultra",
+        "location": "Windsor, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20130814-tiny-treefrog-thumb.jpg",
+        "full": "assets/img/gallery/20130814-tiny-treefrog.jpg",
+        "caption": "The Tiniest Tree Frog Ever",
+        "date": "2013-08-14",
+        "impDate": "August 14, 2013",
+        "camera": "Samsung Galaxy S4 ",
+        "location": "Williamston, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20241010-aurora-thumb.jpg",
+        "full": "assets/img/gallery/20241010-aurora.jpg",
+        "caption": "A Rare Aurora Over Eastern NC",
+        "date": "2024-10-10",
+        "impDate": "October 10, 2024",
+        "camera": "Samsung Galaxy S23 Ultra ",
+        "location": "Winterville, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20190909-grasshopper-thumb.jpg",
+        "full": "assets/img/gallery/20190909-grasshopper.jpg",
+        "caption": "Trying To Hop Inside",
+        "date": "2019-09-09",
+        "impDate": "September 9, 2019",
+        "camera": "Samsung Galaxy S9+ ",
+        "location": "Winterville, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20190209-sunset-farm-thumb.jpg",
+        "full": "assets/img/gallery/20190209-sunset-farm.jpg",
+        "caption": "Wispy Sunset Over The Farm",
+        "date": "2019-02-09",
+        "impDate": "February 2, 2019",
+        "camera": "Samsung Galaxy S9+ ",
+        "location": "Woodard, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20240623-fishing-with-dad-thumb.jpg",
+        "full": "assets/img/gallery/20240623-fishing-with-dad.jpg",
+        "caption": "Dad Looking Over the Cashie River",
+        "date": "2024-06-23",
+        "impDate": "June 26, 2024",
+        "camera": "Samsung Galaxy S23 Ultra",
+        "location": "Windsor, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20240623-cashie-river-thumb.jpg",
+        "full": "assets/img/gallery/20240623-cashie-river.jpg",
+        "caption": "Fiery Sunrise On The Cashie River",
+        "date": "2024-06-23",
+        "impDate": "June 26, 2024",
+        "camera": "Samsung Galaxy S23 Ultra",
+        "location": "Woodard, NC"
+    },
+    {
+        "thumb": "assets/img/gallery/20250523-stormy-whiskers-thumb.jpg",
+        "full": "assets/img/gallery/20250523-stormy-whiskers.jpg",
+        "caption": "Stormy And His Wonderful Whiskers",
+        "date": "2025-05-23",
+        "impDate": "May 23, 2025",
+        "camera": "Samsung Galaxy S23 Ultra",
+        "location": "Winterville, NC"
+    }
+]

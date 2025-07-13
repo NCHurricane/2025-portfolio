@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Photo Gallery - chuckcopeland.com</title>
+
+        <!-- Fonts & Icons -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+
+        <!-- Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Lightbox -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css" rel="stylesheet" />
+
+
+        <!-- Your Custom Styles -->
+        <link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+
+    <body class="bg-dark text-light">
+
+        <!-- Header landmark + Navbar -->
+        <header class="site-header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+                <div class="container">
+                    <a class="navbar-brand fw-bold" href="index.html">ChuckCopeland.com</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="video.html">Videos</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="photo.html">Photos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="social.html">Social</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mailto:chuck@chuckcopeland.com"><i
+                                        class="fa-solid fa-envelope fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main landmark -->
+        <main id="main-content">
+
+            <section class="photo-header py-5">
+                <div class="container">
+                    <h1 class="text-center">Photography</h1>
+                    <h6 class="mb-5 text-center">Amateur photographer, but I love capturing moments.</h6>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section class="photo-gallery py-5">
+                <div class="container">
+                    <div class="row" id="galleryGrid"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer landmark -->
+        <footer class="bg-black text-light text-center py-4 border-top border-secondary">
+            <div class="container">
+                <p class="mb-1">© 2019, 2025 ChuckCopeland.com</p>
+                <p class="small">Winterville, North Carolina</p>
+                <p>Created by me with &nbsp; <i class="fa-solid fa-mug-hot fa-lg"></i>,&nbsp; <i
+                        class="fa-solid fa-computer fa-lg"></i>,
+                    &nbsp;and
+                    VS Code.</p>
+
+                <span style="color: white;"></span>
+
+                <!-- Social Icons -->
+                <div class="d-flex flex-wrap justify-content-center mt-3 gap-3">
+                    <a href="https://www.linkedin.com/in/chuckcopeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="LinkedIn"><i class="fab fa-linkedin fa-fade"
+                            style="--fa-animation-duration: 2.3s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://bsky.app/profile/@chuckcopeland.com" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Bluesky"><i class="fa-brands fa-bluesky fa-fade"
+                            style="--fa-animation-duration: 2.1s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.youtube.com/@chuckcopeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="YouTube"><i class="fab fa-youtube fa-fade"
+                            style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.instagram.com/chuck_copeland/" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Instagram"><i class="fab fa-instagram fa-fade"
+                            style="--fa-animation-duration: 1.9s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.tiktok.com/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="TikTok"><i class="fab fa-tiktok fa-fade"
+                            style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.threads.net/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Threads"><i class="fab fa-threads fa-fade"
+                            style="--fa-animation-duration: 1.95s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.facebook.com/chuckcopelandcom/" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Facebook"><i class="fab fa-facebook fa-fade"
+                            style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://x.com/chuckcopelandwx" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="X"><i class="fab fa-x-twitter fa-fade"
+                            style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src=" https://kit.fontawesome.com/04fcf90301.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/lightbox-edit-250712.js"></script>
+        <script src="assets/js/gallery.js"></script>
+
+    </body>
+
+</html>

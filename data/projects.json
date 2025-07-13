@@ -1,0 +1,98 @@
+[
+  {
+    "id": "2024-showreel",
+    "title": "2024 Showreel",
+    "thumbnail": "assets/video/gallery/thumbs/2024-showreel.webp",
+    "description": "A showcase of my past projects, featuring motion graphics, color grading, and visual effects.",
+    "videoUrl": "https://www.youtube-nocookie.com/embed/DSBbFccIL5I?rel=0&modestbranding=1",
+    "date": "2024-04-19",
+    "mdyDate": "April 19, 2024",
+    "client": "ChuckCopeland.com",
+    "primaryTool": "After Effects",
+    "tools": "After Effects, Premiere Pro, Davinci Resolve Studio, Insta360 Studio, Photoshop, Illustrator, Audition"
+  },
+  {
+    "id": "360-storm",
+    "title": "Thunderstorm 360 Time Lapse",
+    "thumbnail": "assets/video/gallery/thumbs/20210801-360-storm.jpg",
+    "description": "Time-lapse of a severe thunderstorm, captured with the Insta360 One X2.",
+    "videoUrl": "/assets/video/gallery/20210801-360-storm.mp4",
+    "date": "2021-08-01",
+    "mdyDate": "August 1, 2021",
+    "client": "NCHurricane.com",
+    "primaryTool": "Davinci Resolve",
+    "tools": "Insta360 One X2, Davinci Resolve Studio, Audition"
+  },
+  {
+    "id": "marvel-cats",
+    "title": "NCHurricats' Marvel Opening",
+    "thumbnail": "assets/video/gallery/thumbs/2021113-marvel-cats.webp",
+    "description": "Using a template from Film Learnin', I created this opening bumper for the NCHurricats' social media accounts.",
+    "videoUrl": "/assets/video/gallery/20211113_NCHurricats_Marvel_16x9_4K.mp4",
+    "date": "2021-11-13",
+    "mdyDate": "November 13, 2021",
+    "client": "The NCHurricats",
+    "primaryTool": "Cinema 4D",
+    "tools": "Cinema 4D, After Effects, Premiere Pro, Photoshop, Illustrator"
+  },
+  {
+    "id": "farming-drone",
+    "title": "Autumn Harvest, Mini 3 Pro",
+    "thumbnail": "assets/video/gallery/thumbs/farming-drone.webp",
+    "description": "I Took my DJI Mini 3 Pro drone to a farm in eastern North Carolina.",
+    "videoUrl": "https://www.youtube-nocookie.com/embed/2AumlJD8sWc?rel=0&modestbranding=1",
+    "date": "2023-10-29",
+    "mdyDate": "October 29, 2023",
+    "client": "ChuckCopeland.com",
+    "primaryTool": "Davinci Resolve Studio",
+    "tools": "DJI Mini 3 Pro, Davinci Resolve Studio, Photoshop"
+  },
+  {
+    "id": "crosspointe-15",
+    "title": "Crosspointe Church 15th Anniversary",
+    "thumbnail": "assets/video/gallery/thumbs/crosspointe-15.webp",
+    "description": "A video celebrating the 15th anniversary of Crosspointe Church, featuring highlights from the past years.",
+    "videoUrl": "https://www.youtube-nocookie.com/embed/TGDquR-XKbs?rel=0&modestbranding=1",
+    "date": "2024-7-12",
+    "mdyDate": "July 12, 2024",
+    "client": "Crosspointe Church",
+    "primaryTool": "Davinci Resolve Studio",
+    "tools": "After Effects, Davinci Resolve Studio, Photoshop, Illustrator, Audition"
+  },
+  {
+    "id": "2023-fall-enc",
+    "title": "Autumn in Eastern NC",
+    "thumbnail": "assets/video/gallery/thumbs/2023-fall-enc.png",
+    "description": "Drone footage from Bertie County, NC of fall colors surrounding a cotton field.",
+    "videoUrl": "/assets/video/gallery/20231030-fall-in-enc_converted.mp4",
+    "date": "2024-7-12",
+    "mdyDate": "July 12, 2024",
+    "client": "ChuckCopeland.com",
+    "primaryTool": "Davinci Resolve Studio",
+    "tools": "DJI Mini 3 Pro, Davinci Resolve Studio"
+  },
+  {
+    "id": "kinetic-earnhardt",
+    "title": "Kinetic Typography - Dale Earnhardt",
+    "thumbnail": "assets/video/gallery/thumbs/20220114-kinetic-earnhardt.webp",
+    "description": "Remembering Dale Earnhardt's last win.",
+    "videoUrl": "/assets/video/gallery/20220112_kinetic_earnhardt.mp4",
+    "date": "2022-01-14",
+    "mdyDate": "January 14, 2022",
+    "client": "ChuckCopeland.com",
+    "primaryTool": "After Effects",
+    "tools": "After Effects, Premiere Pro, Photoshop, Illustator"
+  },
+  {
+    "id": "walmart-women",
+    "title": "Female Managers of Greenville Walmarts",
+    "thumbnail": "assets/video/gallery/thumbs/20210703-walmart-women.webp",
+    "description": "Drone footage from Bertie County, NC of fall colors surrounding a cotton field.",
+    "videoUrl": "/assets/video/gallery/20210703-walmart-women-after-effects.mp4",
+    "date": "2021-07-03",
+    "mdyDate": "July 3, 2021",
+    "client": "Greenville District, Walmart",
+    "primaryTool": "After Effects",
+    "tools": "After Effects, Premiere Pro, Photoshop, Illustrator"
+  }
+]

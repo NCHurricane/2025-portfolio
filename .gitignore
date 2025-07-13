@@ -7,14 +7,3 @@
 *.webm
 *.mkv
 *.m4v
-
-# Large media files
-*.psd                 # Photoshop files
-
-# IDE/Editor files
-.vscode/              # VS Code settings (unless you want to share them)
-
-# System files
-.DS_Store              # Mac system files
-Thumbs.db             # Windows image cache
-desktop.ini           # Windows folder config

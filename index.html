@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChuckCopeland.com Portfolio</title>
+    <link rel="icon" href="cccom.ico" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-dark text-light">
+
+    <!-- Header landmark + Navbar -->
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="index.html">ChuckCopeland.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="video.html">Videos</a></li>
+              <li class="nav-item"><a class="nav-link" href="photo.html">Photos</a></li>
+              <li class="nav-item"><a class="nav-link" href="social.html">Social</a></li>
+              <li class="nav-item"><a class="nav-link" href="mailto:chuck@chuckcopeland.com"><i
+                    class="fa-solid fa-envelope fa-lg"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main landmark -->
+    <main id="main-content">
+
+      <!-- Video Hero -->
+      <section class="video-hero">
+        <video autoplay muted loop playsinline poster="assets/img/hero-fallback.jpg" loading="lazy">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="overlay d-flex flex-column justify-content-center align-items-center h-100">
+          <div class="hero-text rounded-5 p-5 d-flex align-items-center flex-column flex-lg-row">
+            <div class="flex-fill" style="flex: 0 0 65%;">
+              <h1 class="display-4 fw-bold">Chuck Copeland</h1>
+              <p class="lead">Freelance Multimedia Artist &bull; Weather Enthusiast &bull; Cat Dad</p>
+              <div style="flex: 0 0 35%;">
+                <div class="pt-3 d-flex flex-wrap justify-content-center gap-2">
+                  <a href="https://www.linkedin.com/in/chuckcopeland" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="LinkedIn"><i class="fab fa-linkedin fa-fade"
+                      style="--fa-animation-duration: 2.3s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://bsky.app/profile/@chuckcopeland.com" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="Bluesky"><i class="fa-brands fa-bluesky fa-fade"
+                      style="--fa-animation-duration: 2.1s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://www.youtube.com/@chuckcopeland" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="YouTube"><i class="fab fa-youtube fa-fade"
+                      style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://www.instagram.com/chuck_copeland/" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="Instagram"><i class="fab fa-instagram fa-fade"
+                      style="--fa-animation-duration: 1.9s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://www.tiktok.com/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="TikTok"><i class="fab fa-tiktok fa-fade"
+                      style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://www.threads.net/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="Threads"><i class="fab fa-threads fa-fade"
+                      style="--fa-animation-duration: 1.95s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://www.facebook.com/chuckcopelandcom/" target="_blank" rel="noopener noreferrer"
+                    class="video-icon" aria-label="Facebook"><i class="fab fa-facebook fa-fade"
+                      style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.5;"></i></a>
+                  <a href=" https://x.com/chuckcopelandwx" target="_blank" rel="noopener noreferrer" class="video-icon"
+                    aria-label="Mastodon"><i class="fab fa-mastodon fa-fade"
+                      style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.5;"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="scroll-indicator" id="scrollIndicator">
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro Gallery: Featured Work -->
+      <section class="intro-gallery mt-3 mt-lg-5 mt-sm-4 py-5">
+        <div class="container px-5">
+          <h2 class="text-center">Portfolios</h2>
+          <h6 class="text-center mb-5">Some of my video and photo projects</h6>
+          <div class="row">
+            <figure class="col-11 col-md-6 col-lg-6 mb-4 text-center">
+              <figcaption class="altfont fs-4">Video Portfolio</figcaption>
+              <a href="video.html" aria-label="Video Page">
+                <img src="assets/img/video-portfolio.png" alt="Thumbnail for Video Portfolio" class="img-fluid"
+                  loading="lazy">
+              </a>
+            </figure>
+            <figure class="col-11 col-md-6 col-lg-6 mb-4 text-center">
+              <figcaption class="altfont fs-4">Photo Portfolio</figcaption>
+              <a href="photo.html" aria-label="Gray, fluffy cat, named Stormy">
+                <img src="assets/img/photo-portfolio.png" alt="Thumbnail for Photo Portfolio" class="img-fluid"
+                  loading="lazy">
+              </a>
+            </figure>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients Section -->
+      <section class="client-section mt-3 mt-lg-5 mt-sm-4 py-5">
+        <div class="container">
+          <h2 class="text-center">Clients</h2>
+          <h6 class="text-center mb-5">Past and Present Clients</h6>
+
+          <div class="row justify-content-center">
+            <figure class="col-6 col-md-3 mb-4 text-center">
+              <a href="https://crosspointenc.com/" target="_blank" rel="noopener">
+                <img src="assets/img/crosspointe.png" alt="Crosspointe Logo" class="img-fluid crosspointe"
+                  loading="lazy">
+              </a>
+            </figure>
+            <figure class="col-6 col-md-3 mb-4 text-center">
+              <a href="https://bdo.chuckcopeland.com/" target="_blank" rel="noopener">
+                <img src="assets/img/bdologo.png" alt="BDO Logo" class="img-fluid bdologo" loading="lazy">
+              </a>
+            </figure>
+            <figure class="col-6 col-md-3 mb-4 text-center">
+              <a href="https://www.lisaevans.org/" target="_blank" rel="noopener">
+                <img src="assets/img/lisaevans.png" alt="Lisa Evans Logo" class="img-fluid lisaevans" loading="lazy">
+              </a>
+            </figure>
+            <figure class="col-6 col-md-3 mb-4 text-center">
+              <img src="assets/img/rbsrentals.png" alt="RBS Rentals Logo" class="img-fluid rbs" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer landmark -->
+    <footer class="bg-black text-light text-center py-4 border-top border-secondary">
+      <div class="container">
+        <p class="mb-1">© 2019, 2025 ChuckCopeland.com</p>
+        <p class="small">Winterville, North Carolina</p>
+        <p>Created by me with &nbsp; <i class="fa-solid fa-mug-hot fa-lg"></i>,&nbsp; <i
+            class="fa-solid fa-computer fa-lg"></i>,
+          &nbsp;and
+          VS Code.</p>
+
+        <!-- Social Icons -->
+        <div class="d-flex flex-wrap justify-content-center mt-3 gap-3">
+          <a href="https://www.linkedin.com/in/chuckcopeland" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="LinkedIn"><i class="fab fa-linkedin fa-fade"
+              style="--fa-animation-duration: 2.3s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://bsky.app/profile/@chuckcopeland.com" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="Bluesky"><i class="fa-brands fa-bluesky fa-fade"
+              style="--fa-animation-duration: 2.1s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://www.youtube.com/@chuckcopeland" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="YouTube"><i class="fab fa-youtube fa-fade"
+              style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://www.instagram.com/chuck_copeland/" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="Instagram"><i class="fab fa-instagram fa-fade"
+              style="--fa-animation-duration: 1.9s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://www.tiktok.com/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="TikTok"><i class="fab fa-tiktok fa-fade"
+              style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://www.threads.net/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="Threads"><i class="fab fa-threads fa-fade"
+              style="--fa-animation-duration: 1.95s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://www.facebook.com/chuckcopelandcom/" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="Facebook"><i class="fab fa-facebook fa-fade"
+              style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
+          <a href=" https://x.com/chuckcopelandwx" target="_blank" rel="noopener noreferrer"
+            class="social-icon fs-3 fs-sm-2" aria-label="X"><i class="fab fa-x-twitter fa-fade"
+              style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src=" https://kit.fontawesome.com/04fcf90301.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  </body>
+
+</html>
