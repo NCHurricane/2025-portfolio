@@ -8,6 +8,35 @@
 *.mkv
 *.m4v
 
-#Image Folders
-assets/img
-assets/video
+# Image Folders
+assets/img/
+assets/video/
+
+# Design Files
+*.psd
+*.ai
+*.xd
+*.fig
+
+# Editor and System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# If you use npm/node
+node_modules/
+package-lock.json
+
+# Build and Cache
+dist/
+build/
+.cache/
