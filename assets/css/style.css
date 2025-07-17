@@ -255,13 +255,13 @@ section.video-hero {
 .intro-gallery {
     background:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/assets/img/video-bg.png');
+        url('/assets/img/video-bg.webp');
     background-size: cover;
     background-position: center;
     padding: 3rem 0;
 }
 
-.intro-gallery figure {
+.intro-inner {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -272,7 +272,7 @@ section.video-hero {
     height: 100%;
 }
 
-.intro-gallery figure:hover {
+.intro-inner:hover {
     transform: translateY(-8px);
     background: rgba(0, 0, 0, 0.6);
     border-color: rgba(255, 193, 7, 0.5);
@@ -307,7 +307,7 @@ section.video-hero {
 /* Client Logo Styles +++++++++ */
 /* ============================ */
 .client-section {
-    background-image: url('/assets/img/client.png');
+    background-image: url('/assets/img/client.webp');
     background-size: cover;
     background-position: top center;
 }
@@ -342,7 +342,7 @@ section.video-hero {
 /* Social Icon Buttons ++++++++ */
 /* ============================ */
 .social-title {
-    background-image: url('/assets/img/social-media.png');
+    background-image: url('/assets/img/social-media.webp');
     background-size: cover;
     background-position: center;
     padding: 2rem 0;
@@ -371,25 +371,33 @@ section.video-hero {
 }
 
 .social-main {
-    background-image: url('/assets/img/cccom_bg.png');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('/assets/img/cccom-bg.webp');
     background-size: cover;
     background-position: center;
 }
 
 .social-cats {
-    background-image: url('/assets/img/cats-bg.png');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('/assets/img/cats-bg.webp');
     background-size: cover;
     background-position: center;
 }
 
 .social-wx {
-    background-image: url('/assets/img/wx-bg.png');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('/assets/img/wx-bg.webp');
     background-size: cover;
-    background-position: left center;
+    background-position: center;
 }
 
 .social-motor {
-    background-image: url('/assets/img/racing-bg.png');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('/assets/img/racing-bg.webp');
     background-size: cover;
     background-position: center;
 }
@@ -402,14 +410,14 @@ section.video-hero {
 /* About Me Styling +++++++++++ */
 /* ============================ */
 .about-header {
-    background-image: url('/assets/img/about-me.png');
+    background-image: url('/assets/img/about-me.webp');
     background-size: cover;
     background-position: center;
 }
 
 .about-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/assets/img/contact.png');
+        url('/assets/img/contact.webp');
     background-size: cover;
     background-position: center;
 }
@@ -418,7 +426,7 @@ section.video-hero {
 /* Call to Action Section +++++ */
 /* ============================ */
 .cta-section {
-    background-image: url('/assets/img/web-design.png');
+    background-image: url('/assets/img/web-design.webp');
     background-size: cover;
     background-position: center;
 }
@@ -466,7 +474,7 @@ section.video-hero {
 /* Skills Styling +++++++++++++ */
 /* ============================ */
 .skills-section {
-    background-image: url('/assets/img/skills.png');
+    background-image: url('/assets/img/skills.webp');
     background-size: cover;
     background-position: bottom center;
 }
@@ -567,9 +575,9 @@ section.video-hero {
 
 .photo-header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/assets/img/portfolio-bg.png');
+        url('/assets/img/hero-fallback.webp');
     background-size: cover;
-    background-position: bottom center;
+    background-position: center;
     padding: 3rem 0;
     text-align: center;
 }
@@ -711,7 +719,7 @@ section.video-hero {
 /* ============================ */
 .video-header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/assets/img/video-bg.png');
+        url('/assets/img/video-bg.webp');
     background-size: cover;
     background-position: top center;
     padding: 3rem 0;
@@ -720,6 +728,13 @@ section.video-hero {
 
 .video-portfolio {
     text-align: center;
+}
+
+.video-projects {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/assets/img/video-detail.webp');
+    background-size: cover;
+    background-position: top center;
 }
 
 .video-portfolio a {
@@ -773,6 +788,13 @@ section.video-hero {
 /* ============================ */
 
 /* Container for video detail page */
+.vid-detail {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/assets/img/video-detail.webp');
+    background-size: cover;
+    background-position: top center;
+}
+
 .video-detail-container {
     padding: 0.5em 0;
     min-height: 80vh;

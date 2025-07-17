@@ -12,7 +12,6 @@ fetch("data/projects.json")
             </div></a>
             <h5 class="mt-2 text-light"><strong>${project.title}</strong></h5>
             <hr>
-            <h6><span style="color: aqua;">CLIENT:</span>&nbsp;${project.client}<br /><span style="color: aqua;">MAIN SOFTWARE:</span>&nbsp;${project.primaryTool}<br /><span style="color: aqua;">DELIVER DATE:</span>&nbsp;<em>${project.mdyDate}</em></h6>
         </div>
       `;
     });
