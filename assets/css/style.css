@@ -1615,6 +1615,101 @@ section.video-cat {
 }
 
 /* ============================ */
+/* Cat Gallery Year Headers     */
+/* ============================ */
+
+/* Year divider styling */
+.year-divider {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--primary-yellow);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.8),
+        0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.year-text {
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.photo-count {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #c6c6c6;
+    font-style: normal;
+}
+
+.year-separator {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--primary-yellow) 10%,
+            var(--primary-yellow) 90%,
+            transparent);
+    margin: 0.5rem 0 1.5rem 0;
+    opacity: 0.6;
+}
+
+/* First year header doesn't need top margin */
+.col-12.mb-3.mt-4:first-child {
+    margin-top: 0 !important;
+}
+
+/* Memorial cat year headers - rainbow effect */
+.memorial-cat .year-divider {
+    background: linear-gradient(90deg,
+            #ff0000, #ff8800, #ffff00, #00ff00,
+            #0088ff, #0000ff, #8800ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-shift 5s ease-in-out infinite;
+}
+
+.memorial-cat .year-separator {
+    background: linear-gradient(90deg,
+            transparent,
+            #ff0000 10%, #ff8800 20%, #ffff00 35%,
+            #00ff00 50%, #0088ff 65%, #0000ff 80%,
+            #8800ff 90%,
+            transparent);
+    animation: rainbow-shift 5s ease-in-out infinite;
+}
+
+@keyframes rainbow-shift {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+}
+
+/* Mobile responsiveness for year headers */
+@media (max-width: 768px) {
+    .year-divider {
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .photo-count {
+        font-size: 1rem;
+    }
+}
+
+/* ============================ */
 /* Loading States +++++++++++++ */
 /* ============================ */
 .loading-cats,
@@ -1902,39 +1997,66 @@ footer .fa-brands {
     outline-offset: 2px;
 }
 
-/* Enhanced Focus States for Better Keyboard Navigation */
+/* ============================ */
+/* Enhanced Focus States - Keyboard Only */
+/* ============================ */
 
-/* Video Controls Enhanced Focus */
-.control-btn:focus {
+/* Base focus states - keyboard navigation only */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.nav-link:focus-visible {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Remove default focus for mouse users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+.nav-link:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Video Controls Enhanced Focus - Keyboard Only */
+.control-btn:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 2px;
     background: rgba(255, 215, 0, 0.2);
     transform: scale(1.05);
 }
 
-/* Gallery Items Focus Enhancement */
-.gallery-item a:focus {
+/* Gallery Items Focus Enhancement - Keyboard Only */
+.gallery-item a:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 8px;
 }
 
-.gallery-item a:focus img {
+.gallery-item a:focus-visible img {
     transform: scale(1.02);
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
-/* Video Cards Focus Enhancement */
+/* Video Cards Focus Enhancement - Keyboard Only */
 .video-card:focus-within {
+    outline: none;
+    /* Remove this style entirely or update to focus-visible */
+}
+
+.video-card a:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 12px;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
-/* Social Icons Focus Enhancement */
-.social-icon:focus {
+/* Social Icons Focus Enhancement - Keyboard Only */
+.social-icon:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 6px;
     border-radius: 8px;
@@ -1943,103 +2065,88 @@ footer .fa-brands {
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
 
-/* Navigation Focus Enhancement */
-.nav-link:focus {
+/* Navigation Focus Enhancement - Keyboard Only */
+.nav-link:focus-visible {
     outline: 2px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 4px;
     background: rgba(255, 215, 0, 0.1);
 }
 
-/* Button Focus Enhancement */
-.btn:focus,
-button:focus {
+/* Button Focus Enhancement - Keyboard Only */
+.btn:focus-visible,
+button:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 2px;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-/* Form Elements Focus Enhancement */
-input:focus,
-textarea:focus,
-select:focus {
+/* Form Elements Focus Enhancement - Keyboard Only */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
     outline: 2px solid var(--primary-yellow);
     outline-offset: 2px;
     border-color: var(--primary-yellow);
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
 }
 
-/* Lightbox Focus Management */
-.lightbox {
-    /* Ensure lightbox can receive focus */
-    outline: none;
-}
-
-.lightbox:focus {
-    /* Remove default outline when programmatically focused */
-    outline: none;
-}
-
-/* Enhanced close button focus for lightbox */
-.lb-close:focus {
-    outline: 3px solid var(--primary-yellow) !important;
-    outline-offset: 3px !important;
-    background: rgba(255, 215, 0, 0.2) !important;
-    transform: scale(1.1) !important;
-}
-
-/* Navigation arrows focus in lightbox */
-.lb-prev:focus,
-.lb-next:focus {
+/* Lightbox Navigation - Keyboard Only */
+.lb-prev:focus-visible,
+.lb-next:focus-visible,
+.lb-close:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 3px;
     background: rgba(255, 215, 0, 0.1);
 }
 
-/* Video Play Overlay Focus */
-.video-play-overlay:focus {
+/* Video Play Overlay Focus - Keyboard Only */
+.video-play-overlay:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 12px;
 }
 
-.video-play-overlay:focus .play-button {
+.video-play-overlay:focus-visible .play-button {
     transform: scale(1.1);
     box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
 }
 
-/* Client Logo Focus Enhancement */
-.client-section a:focus img {
+/* Client Logo Focus Enhancement - Keyboard Only */
+.client-section a:focus-visible img {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 8px;
     transform: scale(1.05);
 }
 
-/* Portfolio Cards Focus Enhancement */
+/* Portfolio Cards Focus Enhancement - Keyboard Only */
 .intro-inner:focus-within {
+    /* This needs to be reconsidered - focus-within doesn't have a focus-visible equivalent */
+    /* Consider adding tabindex to the card and using focus-visible on that element instead */
+}
+
+.intro-card a:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 20px;
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
 }
 
-/* Progress Bar Focus for Video Controls */
-.progress-bar:focus {
+/* Progress Bar Focus for Video Controls - Keyboard Only */
+.progress-bar:focus-visible {
     outline: 2px solid var(--primary-yellow);
     outline-offset: 2px;
     border-radius: 3px;
 }
 
-/* Volume Slider Focus */
-.volume-slider:focus {
+/* Volume Slider Focus - Keyboard Only */
+.volume-slider:focus-visible {
     outline: 2px solid var(--primary-yellow);
     outline-offset: 2px;
 }
 
-/* Back Navigation Focus Enhancement */
-.back-nav a:focus {
+/* Back Navigation Focus Enhancement - Keyboard Only */
+.back-nav a:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 8px;
@@ -2047,111 +2154,51 @@ select:focus {
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* Skills Items Focus Enhancement */
+/* Skills Items Focus Enhancement - Keyboard Only */
 .skill-item:focus-within {
+    /* This also needs reconsideration */
+}
+
+.skill-item a:focus-visible {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 4px;
     border-radius: 20px;
-    transform: translateY(-4px);
-    background: rgba(0, 0, 0, 0.8);
-    border-color: rgba(255, 215, 0, 0.5);
-    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.25);
 }
 
-/* Focus Visible Only - Hide Focus for Mouse Users */
-@media (prefers-reduced-motion: no-preference) {
-
-    /* Smooth focus transitions for users who don't prefer reduced motion */
-    .skip-link,
-    .control-btn,
-    .social-icon,
-    .nav-link,
-    .gallery-item a,
-    .video-card,
-    .back-nav a {
-        transition: all 0.2s ease;
-    }
+/* Cat Card Focus Enhancement - Keyboard Only */
+.cat-card a:focus-visible {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 8px;
 }
 
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-
-    .skip-link:focus,
-    .control-btn:focus,
-    .social-icon:focus,
-    .nav-link:focus,
-    .gallery-item a:focus,
-    .btn:focus {
-        outline-width: 4px;
-        outline-offset: 3px;
-    }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-
-    .skip-link,
-    .control-btn,
-    .social-icon,
-    .nav-link,
-    .gallery-item a,
-    .video-card,
-    .back-nav a,
-    .video-play-overlay .play-button {
-        transition: none;
-        transform: none;
-    }
-
-    .control-btn:focus,
-    .social-icon:focus,
-    .gallery-item a:focus img,
-    .video-card:focus-within,
-    .back-nav a:focus {
-        transform: none;
-    }
-}
-
-/* Focus Management Utilities */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.sr-only:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: inherit;
-    margin: inherit;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-}
-
-/* Keyboard Navigation Hints */
-.keyboard-hint {
-    font-size: 0.8rem;
-    color: #aaa;
-    font-style: italic;
-    margin-top: 0.5rem;
-}
-
-/* Focus trap helper for modals/lightbox */
-.focus-trap {
-    /* Applied via JavaScript to elements that should trap focus */
-}
-
-/* Enhanced keyboard indicator for interactive elements */
-[tabindex]:focus,
-[role="button"]:focus,
-[role="link"]:focus {
+/* Enhanced keyboard indicator for interactive elements - Keyboard Only */
+[tabindex]:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible {
     outline: 2px solid var(--primary-yellow);
     outline-offset: 2px;
+}
+
+/* Skip Link Focus - Always visible when focused */
+.skip-link:focus {
+    /* Skip links should always show focus, even for mouse users */
+    top: 0;
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* Browser Support Fallback */
+@supports not selector(:focus-visible) {
+
+    /* Fallback for browsers that don't support :focus-visible */
+    /* This will show focus for all interactions in older browsers */
+    a:focus,
+    button:focus,
+    input:focus,
+    .nav-link:focus {
+        outline: 2px solid var(--primary-yellow);
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
 }

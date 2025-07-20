@@ -7,52 +7,256 @@
     "cardThumbnail": "assets/img/cats/bella/bella-card.webp",
     "photos": [
         {
-            "thumb": "https://placekitten.com/300/200?random=61",
-            "full": "https://placekitten.com/800/600?random=61",
-            "caption": "Tornado Bella in Action",
-            "date": "2024-12-13"
+            "thumb": "assets/img/cats/bella/20201015-thumb.webp",
+            "full": "assets/img/cats/bella/20201015.jpg",
+            "caption": "Bella's First Photo",
+            "date": "2020-11-04"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=62",
-            "full": "https://placekitten.com/800/600?random=62",
-            "caption": "Inconvenient Nap Spot Champion",
-            "date": "2024-12-08"
+            "thumb": "assets/img/cats/bella/20201104_185606-thumb.webp",
+            "full": "assets/img/cats/bella/20201104_185606.jpg",
+            "caption": "Day Three: Learning to Pose",
+            "date": "2020-11-04"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=63",
-            "full": "https://placekitten.com/800/600?random=63",
-            "caption": "Professional Troublemaker",
-            "date": "2024-12-03"
+            "thumb": "assets/img/cats/bella/20201108_164202-thumb.webp",
+            "full": "assets/img/cats/bella/20201108_164202.jpg",
+            "caption": "She Discovered the Basket",
+            "date": "2020-11-08"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=64",
-            "full": "https://placekitten.com/800/600?random=64",
-            "caption": "Instant Best Friend Mode",
-            "date": "2024-11-26"
+            "thumb": "assets/img/cats/bella/20201111_195907-thumb.webp",
+            "full": "assets/img/cats/bella/20201111_195907.jpg",
+            "caption": "Fancy Diva Loves Fancy Feast",
+            "date": "2020-11-11"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=65",
-            "full": "https://placekitten.com/800/600?random=65",
-            "caption": "Acrobatic Superstar",
-            "date": "2024-11-21"
+            "thumb": "assets/img/cats/bella/20201129_102023-thumb.webp",
+            "full": "assets/img/cats/bella/20201129_102023.jpg",
+            "caption": "Look At Those Beautiful Eyes",
+            "date": "2020-12-01"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=66",
-            "full": "https://placekitten.com/800/600?random=66",
-            "caption": "Interactive Toy Champion",
-            "date": "2024-11-14"
+            "thumb": "assets/img/cats/bella/20201201_142404-thumb.webp",
+            "full": "assets/img/cats/bella/20201201_142404.jpg",
+            "caption": "Contemplating Her Next Move",
+            "date": "2020-12-01"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=67",
-            "full": "https://placekitten.com/800/600?random=67",
-            "caption": "Wrong Place, Right Time",
-            "date": "2024-11-07"
+            "thumb": "assets/img/cats/bella/20201205_143822-thumb.webp",
+            "full": "assets/img/cats/bella/20201205_143822.jpg",
+            "caption": "Divas Need Their Beauty Sleep",
+            "date": "2020-12-05"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=68",
-            "full": "https://placekitten.com/800/600?random=68",
-            "caption": "Boundless Curiosity",
-            "date": "2024-11-01"
+            "thumb": "assets/img/cats/bella/20201206_123923-thumb.webp",
+            "full": "assets/img/cats/bella/20201206_123923.jpg",
+            "caption": "Her First Christmas",
+            "date": "2020-12-06"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20201212_195335-thumb.webp",
+            "full": "assets/img/cats/bella/20201212_195335.jpg",
+            "caption": "Prettiest Present Under the Tree",
+            "date": "2020-12-12"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20201216_200952-thumb.webp",
+            "full": "assets/img/cats/bella/20201216_200952.jpg",
+            "caption": "Waiting for Santa Paws",
+            "date": "2020-12-16"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20201230_110910-thumb.webp",
+            "full": "assets/img/cats/bella/20201230_110910.jpg",
+            "caption": "Starting to Grow Her Floof",
+            "date": "2020-12-30"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210104_080509-thumb.webp",
+            "full": "assets/img/cats/bella/20210104_080509.jpg",
+            "caption": "New Year, New Floof",
+            "date": "2021-01-04"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210105_074630-thumb.webp",
+            "full": "assets/img/cats/bella/20210105_074630.jpg",
+            "caption": "First Vet Visit!",
+            "date": "2021-01-05"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210107_183239-thumb.webp",
+            "full": "assets/img/cats/bella/20210107_183239.jpg",
+            "caption": "Bella, the Pretzel Princess",
+            "date": "2021-01-07"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210108_153148-thumb.webp",
+            "full": "assets/img/cats/bella/20210108_153148.jpg",
+            "caption": "Big Beautiful Eyes",
+            "date": "2021-01-08"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210125_182018-thumb.webp",
+            "full": "assets/img/cats/bella/20210125_182018.jpg",
+            "caption": "Testing the New Water Fountain",
+            "date": "2021-01-25"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210130_115243-thumb.webp",
+            "full": "assets/img/cats/bella/20210130_115243.jpg",
+            "caption": "Anything Is a Great Bed",
+            "date": "2021-01-30"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210202_191206-thumb.webp",
+            "full": "assets/img/cats/bella/20210202_191206.jpg",
+            "caption": "Looking for Rubs (or Treats)",
+            "date": "2021-02-02"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210205_084306-thumb.webp",
+            "full": "assets/img/cats/bella/20210205_084306.jpg",
+            "caption": "Helping Meowmy Work",
+            "date": "2021-02-05"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210223_205333-thumb.webp",
+            "full": "assets/img/cats/bella/20210223_205333.jpg",
+            "caption": "Checking Out Her Social Media",
+            "date": "2021-02-23"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210306_222917-thumb.webp",
+            "full": "assets/img/cats/bella/20210306_222917.jpg",
+            "caption": "Bedtime with Bella",
+            "date": "2021-03-06"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210318_111558-thumb.webp",
+            "full": "assets/img/cats/bella/20210318_111558.jpg",
+            "caption": "Bird Watching",
+            "date": "2021-03-18"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210327_175329-thumb.webp",
+            "full": "assets/img/cats/bella/20210327_175329.jpeg",
+            "caption": "Sleepy or Laughing?",
+            "date": "2021-03-27"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210501_223644-thumb.webp",
+            "full": "assets/img/cats/bella/20210501_223644.jpg",
+            "caption": "Focused On Her Brothers",
+            "date": "2021-05-01"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210505_091342-thumb.webp",
+            "full": "assets/img/cats/bella/20210505_091342.jpg",
+            "caption": "Breaktime Cuddles with Meowmy",
+            "date": "2021-05-05"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210515_155950-thumb.webp",
+            "full": "assets/img/cats/bella/20210515_155950.jpg",
+            "caption": "Taking a Break from BirdTV",
+            "date": "2021-05-15"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210614_222800-thumb.webp",
+            "full": "assets/img/cats/bella/20210614_222800.jpg",
+            "caption": "Too Close, CatDad!",
+            "date": "2021-06-14"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210704_164726-thumb.webp",
+            "full": "assets/img/cats/bella/20210704_164726.jpg",
+            "caption": "Silly Sleeping Girl",
+            "date": "2021-07-04"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210811_165434-thumb.webp",
+            "full": "assets/img/cats/bella/20210811_165434.jpg",
+            "caption": "Resting for the 2AM Zoomies",
+            "date": "2021-08-11"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210818_1736-thumb.webp",
+            "full": "assets/img/cats/bella/20210818_1736.jpg",
+            "caption": "The Day Bella Almost Left Us",
+            "date": "2021-08-18"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210820_183001-thumb.webp",
+            "full": "assets/img/cats/bella/20210820_183001.jpg",
+            "caption": "Recovering, Four Hours from Home",
+            "date": "2021-08-20"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210828_200038-thumb.webp",
+            "full": "assets/img/cats/bella/20210828_200038.jpg",
+            "caption": "Back Home with a Bit Less Floof",
+            "date": "2021-08-28"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20210911_171714-thumb.webp",
+            "full": "assets/img/cats/bella/20210911_171714.jpg",
+            "caption": "Head Scritches Are Welcome",
+            "date": "2021-09-11"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211008_164952-thumb.webp",
+            "full": "assets/img/cats/bella/20211008_164952.jpg",
+            "caption": "I Need More Toys, Please",
+            "date": "2021-10-08"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211012_103228-thumb.webp",
+            "full": "assets/img/cats/bella/20211012_103228.jpg",
+            "caption": "Four Hour Trip with CatDad",
+            "date": "2021-10-12"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211022_203258-thumb.webp",
+            "full": "assets/img/cats/bella/20211022_203258.jpg",
+            "caption": "Autumn Vibes, Winter Floof Activated",
+            "date": "2021-10-22"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211116_190323-thumb.webp",
+            "full": "assets/img/cats/bella/20211116_190323.jpg",
+            "caption": "Prettier Than a Christmas Tree",
+            "date": "2021-11-16"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211117_182138-thumb.webp",
+            "full": "assets/img/cats/bella/20211117_182138.jpg",
+            "caption": "You Don't Need Any Other Gifts",
+            "date": "2021-11-17"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211120_194804-thumb.webp",
+            "full": "assets/img/cats/bella/20211120_194804.jpg",
+            "caption": "Bella's Second Christmas",
+            "date": "2021-11-20"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211128_083333-thumb.webp",
+            "full": "assets/img/cats/bella/20211128_083333.jpg",
+            "caption": "You Shall Pay for This, CatDad",
+            "date": "2021-11-28"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211206_174012-thumb.webp",
+            "full": "assets/img/cats/bella/20211206_174012.jpg",
+            "caption": "Was That Reindeer Hooves?",
+            "date": "2021-12-06"
+        },
+        {
+            "thumb": "assets/img/cats/bella/20211231_180151-thumb.webp",
+            "full": "assets/img/cats/bella/20211231_180151.jpg",
+            "caption": "Bella, the Purrito Gets Her Meds",
+            "date": "2021-12-31"
         }
     ]
 }

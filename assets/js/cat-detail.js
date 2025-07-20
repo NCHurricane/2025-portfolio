@@ -33,10 +33,11 @@ function renderCatDetail(catData) {
     document.getElementById('catName').textContent = catData.name;
     document.getElementById('catBio').textContent = catData.bio;
 
-    // Render photo gallery
+    // Render photo gallery with year grouping
     renderPhotoGallery(catData.photos, catData.name);
 }
 
+// OPTION 1: Preserve JSON Order (Simplest)
 function renderPhotoGallery(photos, catName) {
     var container = document.getElementById('catGalleryGrid');
 
@@ -48,40 +49,69 @@ function renderPhotoGallery(photos, catName) {
     // Clear loading state
     container.innerHTML = '';
 
-    // Sort photos by date (newest first)
-    photos.sort(function (a, b) {
-        return new Date(b.date) - new Date(a.date);
+    // Group photos by year WITHOUT sorting
+    var photosByYear = {};
+
+    photos.forEach(function (photo, index) {
+        var year = new Date(photo.date).getFullYear();
+        if (!photosByYear[year]) {
+            photosByYear[year] = [];
+        }
+        // Add original index to preserve order
+        photo.originalIndex = index;
+        photosByYear[year].push(photo);
     });
 
-    photos.forEach(function (photo) {
-        var col = document.createElement('div');
-        col.className = 'col-6 col-md-4 col-lg-3 mb-4 gallery-item';
+    // Sort years in descending order (newest first)
+    var years = Object.keys(photosByYear).sort(function (a, b) {
+        return b - a;
+    });
 
-        // Format the date for display
-        var photoDate = formatPhotoDate(photo.date);
+    // Render photos grouped by year
+    years.forEach(function (year) {
+        // Add year header
+        var yearHeader = document.createElement('div');
+        yearHeader.className = 'col-12 mb-3 mt-4';
+        yearHeader.innerHTML = `
+            <h3 class="year-divider">
+                <span class="year-text">${year}</span>
+                <span class="photo-count">(${photosByYear[year].length} photo${photosByYear[year].length > 1 ? 's' : ''})</span>
+            </h3>
+            <hr class="year-separator">
+        `;
+        container.appendChild(yearHeader);
 
-        // Create caption with cat name, date, and photo caption
-        var fullCaption =
-            '<h5>' + photo.caption + '</h5>' +
-            '<p class="lb-caption">' + photoDate + ' &bull; ' + catName + '</p>';
+        // Render photos for this year
+        photosByYear[year].forEach(function (photo) {
+            var col = document.createElement('div');
+            col.className = 'col-6 col-md-4 col-lg-3 mb-4 gallery-item';
 
-        var escapedCaption = fullCaption.replace(/"/g, '&quot;');
+            // Format the date for display
+            var photoDate = formatPhotoDate(photo.date);
 
-        col.innerHTML =
-            '<a href="' + photo.full + '"' +
-            ' data-lightbox="cat-gallery"' +
-            ' data-title="' + escapedCaption + '">' +
-            '<div class="gallery-pic">' +
-            '<img src="' + photo.thumb + '"' +
-            ' alt="' + photo.caption + '"' +
-            ' loading="lazy"' +
-            ' class="img-fluid rounded shadow-sm" />' +
-            '</div>' +
-            '</a>' +
-            '<h5 class="mt-2"><strong>' + photo.caption + '</strong></h5>' +
-            '<hr>';
+            // Create caption with cat name, date, and photo caption
+            var fullCaption =
+                '<h5>' + photo.caption + '</h5>' +
+                '<p class="lb-caption">' + photoDate + ' &bull; ' + catName + '</p>';
 
-        container.appendChild(col);
+            var escapedCaption = fullCaption.replace(/"/g, '&quot;');
+
+            col.innerHTML =
+                '<a href="' + photo.full + '"' +
+                ' data-lightbox="cat-gallery"' +
+                ' data-title="' + escapedCaption + '">' +
+                '<div class="gallery-pic">' +
+                '<img src="' + photo.thumb + '"' +
+                ' alt="' + photo.caption + '"' +
+                ' loading="lazy"' +
+                ' class="img-fluid rounded shadow-sm" />' +
+                '</div>' +
+                '</a>' +
+                '<h5 class="mt-2"><strong>' + photo.caption + '</strong></h5>' +
+                '<hr>';
+
+            container.appendChild(col);
+        });
     });
 }
 
