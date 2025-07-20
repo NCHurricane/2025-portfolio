@@ -1,0 +1,57 @@
+{
+    "name": "Bailey",
+    "birthYear": "Born in 2020",
+    "shortBio": "Bailey is the adventurous explorer of the NCHurricats family. This tabby troublemaker loves to investigate every corner of the house and has never met a cardboard box he didn't want to claim as his personal fortress.",
+    "bio": "Bailey is the adventurous explorer of the NCHurricats family. This tabby troublemaker loves to investigate every corner of the house and has never met a cardboard box he didn't want to claim as his personal fortress. When he's not busy plotting his next adventure, you'll find Bailey curled up in the sunniest spot available, soaking up those warm rays. His favorite pastimes include bird watching from his window perch and engaging in epic wrestling matches with his favorite catnip mouse. Bailey's curious nature and playful spirit make every day an adventure for the whole family.",
+    "cardThumbnail": "assets/img/cats/bailey/bailey-card.webp",
+    "photos": [
+        {
+            "thumb": "https://placekitten.com/300/200?random=1",
+            "full": "https://placekitten.com/800/600?random=1",
+            "caption": "Bailey's Morning Stretch",
+            "date": "2024-12-15"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=2",
+            "full": "https://placekitten.com/800/600?random=2",
+            "caption": "Exploring the Garden",
+            "date": "2024-12-10"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=3",
+            "full": "https://placekitten.com/800/600?random=3",
+            "caption": "Cardboard Castle King",
+            "date": "2024-12-05"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=4",
+            "full": "https://placekitten.com/800/600?random=4",
+            "caption": "Sunbathing Expert",
+            "date": "2024-11-28"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=5",
+            "full": "https://placekitten.com/800/600?random=5",
+            "caption": "Bird Watching Duty",
+            "date": "2024-11-20"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=6",
+            "full": "https://placekitten.com/800/600?random=6",
+            "caption": "Catnip Mouse Victory",
+            "date": "2024-11-15"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=7",
+            "full": "https://placekitten.com/800/600?random=7",
+            "caption": "Cozy Afternoon Nap",
+            "date": "2024-11-08"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=8",
+            "full": "https://placekitten.com/800/600?random=8",
+            "caption": "Adventure Planning Session",
+            "date": "2024-11-01"
+        }
+    ]
+}

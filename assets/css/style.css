@@ -1,4 +1,13 @@
 /* ============================ */
+/* Color System & Variables     */
+/* ============================ */
+:root {
+    --primary-yellow: #ffd700;
+    --primary-yellow-hover: #ffed4e;
+    --primary-yellow-dark: #e6c200;
+}
+
+/* ============================ */
 /* Base Theme Setup +++++++++++ */
 /* ============================ */
 body {
@@ -11,35 +20,40 @@ body {
 }
 
 a {
-    color: #ffc107;
+    color: var(--primary-yellow);
     text-decoration: none;
 }
 
 a:hover {
-    color: #fff066;
+    color: var(--primary-yellow-hover);
     text-decoration: none;
 }
 
-
-
 h1,
 h2 {
-    color: #ffff00;
+    color: var(--primary-yellow);
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
+    /* Enhanced text shadow for better readability on all backgrounds */
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.8),
+        0 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 
 h3,
 h4,
 h5 {
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
+    /* Add text shadow to smaller headings for consistency */
+    text-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.6),
+        0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 hr {
     margin: 0.8rem;
-    border: 1px solid rgb(255, 255, 0);
+    border: 1px solid var(--primary-yellow);
 }
 
 img {
@@ -50,6 +64,16 @@ img {
 
 .altfont {
     font-family: 'Oswald', sans-serif;
+}
+
+/* Enhanced Focus States */
+a:focus,
+button:focus,
+input:focus,
+.nav-link:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* ============================ */
@@ -88,7 +112,12 @@ section.video-hero {
     font-family: 'Oswald', sans-serif;
     font-style: italic;
     text-transform: uppercase;
-    color: #ffff00;
+    color: var(--primary-yellow);
+    /* Enhanced shadow for video background */
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.9),
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        0 1px 0px rgba(0, 0, 0, 1);
 }
 
 .video-hero .overlay p {
@@ -109,6 +138,12 @@ section.video-hero {
     color: aqua;
 }
 
+.video-icon:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 .hero-text {
     background: rgba(0, 0, 0, 0.3);
     width: 95%;
@@ -122,7 +157,6 @@ section.video-hero {
     mask-image: radial-gradient(circle at center, #000 50%, transparent 90%);
     object-fit: cover;
 }
-
 
 @media (max-width: 992px) {
     .video-hero .overlay h1 {
@@ -196,18 +230,18 @@ section.video-hero {
 .mouse {
     width: 40px;
     height: 60px;
-    border: 2px solid #ffc107;
+    border: 2px solid var(--primary-yellow);
     border-radius: 12px;
     position: relative;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .wheel {
     width: 12px;
     height: 24px;
-    background: #ffc107;
+    background: var(--primary-yellow);
     border-radius: 2px;
     position: absolute;
     top: 8px;
@@ -267,7 +301,7 @@ section.video-hero {
     border-radius: 20px;
     padding: 2rem 1.5rem;
     margin-bottom: 1rem;
-    border: 1px solid rgba(255, 193, 7, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     transition: all 0.3s ease;
     height: 100%;
 }
@@ -275,21 +309,25 @@ section.video-hero {
 .intro-inner:hover {
     transform: translateY(-8px);
     background: rgba(0, 0, 0, 0.6);
-    border-color: rgba(255, 193, 7, 0.5);
-    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.25);
 }
 
 .intro-gallery figcaption {
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
-    color: #ffc107;
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
     transition: all 0.3s ease;
+    /* Enhanced text shadow for video background overlay */
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.9),
+        0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .intro-gallery figure:hover figcaption {
-    color: #fff066;
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    color: var(--primary-yellow-hover);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .intro-gallery .container img.img-fluid {
@@ -367,7 +405,13 @@ section.video-hero {
 
 .social-icon:hover {
     transform: scale(1.5);
-    color: #ffc107;
+    color: var(--primary-yellow);
+}
+
+.social-icon:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .social-main {
@@ -438,27 +482,27 @@ section.video-hero {
 .cta-card h1 {
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
-    color: #ffc107;
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
     transition: all 0.3s ease;
     font-size: 2rem;
 }
 
 .cta-card:hover h1 {
-    color: #fff066;
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    color: var(--primary-yellow-hover);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .cta-card a {
-    color: #ffc107;
+    color: var(--primary-yellow);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .cta-card a:hover {
-    color: #fff066;
-    text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+    color: var(--primary-yellow-hover);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 .cta-card .fab.fa-linkedin {
@@ -467,7 +511,7 @@ section.video-hero {
 
 .cta-card .fab.fa-linkedin:hover {
     transform: scale(1.1);
-    text-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
 }
 
 /* ============================ */
@@ -485,7 +529,7 @@ section.video-hero {
     border-radius: 20px;
     padding: 2rem 1.5rem;
     margin-bottom: 1rem;
-    border: 1px solid rgba(255, 193, 7, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     transition: all 0.3s ease;
     height: 100%;
 }
@@ -493,14 +537,14 @@ section.video-hero {
 .skill-item:hover {
     transform: translateY(-8px);
     background: rgba(0, 0, 0, 0.8);
-    border-color: rgba(255, 193, 7, 0.5);
-    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.25);
 }
 
 .skills-section h5 {
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
-    color: #ffc107;
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
     transition: all 0.3s ease;
 }
@@ -513,19 +557,20 @@ section.video-hero {
 }
 
 .skills-section i {
-    color: #ffc107;
+    color: var(--primary-yellow);
     transition: all 0.3s ease;
 }
 
 .skill-item:hover i {
     transform: scale(1.15);
-    text-shadow: 0 0 25px rgba(255, 193, 7, 0.6);
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     filter: brightness(1.2);
+    color: var(--primary-yellow-hover);
 }
 
 .skill-item:hover h5 {
-    color: #fff066;
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    color: var(--primary-yellow-hover);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .skill-item:hover p {
@@ -562,8 +607,6 @@ section.video-hero {
         font-size: 0.9rem;
     }
 }
-
-
 
 /* ============================ */
 /* =========PHOTO PAGE========= */
@@ -607,7 +650,7 @@ section.video-hero {
 
 .lb-caption h5 {
     font-size: 1.5rem;
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 .lb-data .lb-caption {
@@ -619,7 +662,7 @@ section.video-hero {
 .lb-data .lb-number {
     padding-bottom: 1em;
     font-size: 0.7rem;
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 .lb-closeContainer {
@@ -636,8 +679,6 @@ section.video-hero {
     display: block !important;
     background: rgba(0, 0, 0, 0.7) !important;
     border-radius: 50% !important;
-    /* width: 40px !important;
-    height: 40px !important; */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -648,7 +689,7 @@ section.video-hero {
 .lb-closeContainer .lb-close:hover {
     background: rgba(0, 0, 0, 0.9) !important;
     transform: scale(1.4) !important;
-    color: #ffc107 !important;
+    color: var(--primary-yellow) !important;
     opacity: 1;
 }
 
@@ -657,7 +698,7 @@ section.video-hero {
 }
 
 .lb-data .lb-close:hover i {
-    color: #fff066 !important;
+    color: var(--primary-yellow-hover) !important;
 }
 
 /* Mobile adjustments */
@@ -666,10 +707,6 @@ section.video-hero {
         top: 20px !important;
         right: 10px !important;
     }
-
-    /* .lb-data .lb-close i {
-        font-size: 1.5rem !important;
-    } */
 
     .lb-caption {
         font-size: 0.8rem;
@@ -680,6 +717,53 @@ section.video-hero {
     }
 }
 
+.lb-prev:focus,
+.lb-next:focus,
+.lb-close:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px #ffc107 !important;
+    border-radius: 4px !important;
+}
+
+/* Remove any default focus styling */
+.lb-nav a:focus,
+.lb-closeContainer a:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+/* Remove all focus indicators from lightbox elements */
+.lightbox *:focus,
+.lightboxOverlay *:focus,
+.lb-outerContainer *:focus,
+.lb-container *:focus,
+.lb-nav *:focus,
+.lb-closeContainer *:focus,
+.lb-prev:focus,
+.lb-next:focus,
+.lb-close:focus,
+.lb-cancel:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Also remove any pseudo-element focus styling */
+.lb-prev:focus::before,
+.lb-next:focus::before,
+.lb-close:focus::before {
+    outline: none !important;
+    border: none !important;
+}
+
+/* Remove focus from the lightbox container itself */
+#lightbox:focus,
+#lightboxOverlay:focus {
+    outline: none !important;
+}
+
+
 .gallery-pic {
     border-radius: 8px;
     transition: all 0.5s ease;
@@ -687,12 +771,12 @@ section.video-hero {
 
 .gallery-pic:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 193, 7, 0.6);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     filter: brightness(1.2);
 }
 
 .gallery-item h5 {
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 @media (max-width: 768px) {
@@ -708,7 +792,6 @@ section.video-hero {
         margin: .5rem;
     }
 }
-
 
 /* ============================ */
 /* =========VIDEO PAGE========= */
@@ -739,7 +822,7 @@ section.video-hero {
 
 .video-portfolio a {
     text-transform: uppercase;
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 .video-card {
@@ -750,7 +833,7 @@ section.video-hero {
 
 .video-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 193, 7, 0.6);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     filter: brightness(1.2);
 }
 
@@ -777,7 +860,7 @@ section.video-hero {
 }
 
 .video-card:hover .play-icon {
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 /* ============================ */
@@ -841,7 +924,7 @@ section.video-hero {
 .video-play-overlay .play-button {
     width: 80px;
     height: 80px;
-    background: rgba(255, 193, 7, 0.9);
+    background: rgba(255, 215, 0, 0.9);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -852,9 +935,9 @@ section.video-hero {
 }
 
 .video-play-overlay .play-button:hover {
-    background: rgba(255, 193, 7, 1);
+    background: var(--primary-yellow);
     transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(255, 193, 7, 0.4);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
 }
 
 .video-play-overlay .play-button i {
@@ -887,7 +970,7 @@ section.video-hero {
 .control-btn {
     background: none;
     border: none;
-    color: #ffc107;
+    color: var(--primary-yellow);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.5rem;
@@ -901,8 +984,13 @@ section.video-hero {
 }
 
 .control-btn:hover {
-    background: rgba(255, 193, 7, 0.2);
-    color: #fff066;
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--primary-yellow-hover);
+}
+
+.control-btn:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
 }
 
 .progress-container {
@@ -923,7 +1011,7 @@ section.video-hero {
 
 .progress-filled {
     height: 100%;
-    background: #ffc107;
+    background: var(--primary-yellow);
     border-radius: 3px;
     width: 0%;
     transition: width 0.1s ease;
@@ -955,7 +1043,7 @@ section.video-hero {
     -webkit-appearance: none;
     width: 14px;
     height: 14px;
-    background: #ffc107;
+    background: var(--primary-yellow);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -963,7 +1051,7 @@ section.video-hero {
 .volume-slider::-moz-range-thumb {
     width: 14px;
     height: 14px;
-    background: #ffc107;
+    background: var(--primary-yellow);
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -975,13 +1063,13 @@ section.video-hero {
 }
 
 .video-wrapper video::-webkit-media-controls-play-button {
-    background-color: rgba(255, 193, 7, 0.9);
+    background-color: rgba(255, 215, 0, 0.9);
     border-radius: 50%;
 }
 
 .video-wrapper video::-webkit-media-controls-current-time-display,
 .video-wrapper video::-webkit-media-controls-time-remaining-display {
-    color: #ffc107;
+    color: var(--primary-yellow);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
 }
@@ -1015,7 +1103,7 @@ section.video-hero {
 .video-info h2 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    color: #ffc107;
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
     font-size: 2.5rem;
 }
@@ -1028,7 +1116,7 @@ section.video-hero {
     padding: 1rem;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    border: 1px solid rgba(255, 193, 7, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 .video-info .meta-item {
@@ -1040,7 +1128,7 @@ section.video-hero {
 .video-info .meta-label {
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
-    color: #ffc107;
+    color: var(--primary-yellow);
     font-size: 0.9rem;
     text-transform: uppercase;
 }
@@ -1072,11 +1160,9 @@ section.video-hero {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    /* background-color: #000; */
     background: rgba(0, 0, 0, 0.7);
-    /* border: 1px solid rgba(255, 193, 7, 0.3); */
     border-radius: 8px;
-    color: #ffc107;
+    color: var(--primary-yellow);
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
@@ -1085,8 +1171,8 @@ section.video-hero {
 }
 
 .back-nav a:hover {
-    background: rgba(255, 193, 7, 0.5);
-    border-color: rgba(255, 193, 7, 0.5);
+    background: rgba(255, 215, 0, 0.5);
+    border-color: rgba(255, 215, 0, 0.5);
     color: #322d00;
     transform: translateX(-4px);
 }
@@ -1108,7 +1194,7 @@ section.video-hero {
     min-height: 400px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 12px;
-    color: #ffc107;
+    color: var(--primary-yellow);
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
 }
@@ -1281,7 +1367,7 @@ section.video-hero {
 
 .social-icon:hover {
     transform: scale(1.5);
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 .icon-label {
@@ -1293,6 +1379,302 @@ section.video-hero {
 .cc-logo {
     max-width: 300px;
     height: auto;
+}
+
+/* ============================ */
+/* =========CATS PAGE=========== */
+/* ============================ */
+
+/* ============================ */
+/* Cats Gallery Section ++++++++ */
+/* ============================ */
+section.video-cat {
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-cat video {
+    object-fit: cover;
+    object-position: center bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.video-cat .overlay {
+    z-index: 1;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* fallback for readability */
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.video-cat .overlay h1 {
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--primary-yellow);
+    /* Enhanced shadow for video background */
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.9),
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        0 1px 0px rgba(0, 0, 0, 1);
+}
+
+.video-cat .overlay p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.hero-text img.logo-full {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+.cats-gallery {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('/assets/img/cats-bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ============================ */
+/* Cat Card Styles +++++++++++++ */
+/* ============================ */
+.cat-card {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 0;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cat-card:hover,
+.memorial-cat:hover {
+    transform: translateY(-8px);
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 193, 7, 0.5);
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+}
+
+.memorial-cat {
+    background: linear-gradient(45deg,
+            rgba(255, 0, 0, 0.4), rgba(255, 128, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(128, 255, 0, 0.4),
+            rgba(0, 255, 0, 0.4), rgba(0, 255, 128, 0.4), rgba(0, 255, 255, 0.4), rgba(0, 128, 255, 0.4),
+            rgba(0, 0, 255, 0.4), rgba(128, 0, 255, 0.4), rgba(255, 0, 255, 0.4), rgba(255, 0, 128, 0.4)) !important;
+    background-size: 100% 100% !important;
+}
+
+.memorial-cat:hover {
+    animation: rainbow-memorial 10s linear infinite;
+    background-size: 500% 500%;
+    filter: brightness(1.3);
+}
+
+.memorial-cat .cat-bio,
+.memorial-cat .cat-photo-count,
+.memorial-cat .cat-birth-year {
+    color: #e2e2e2;
+    /* text-shadow: 0 0 10px rgba(54, 54, 54, 0.728); */
+}
+
+.cat-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.cat-card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 20px 20px 0 0;
+}
+
+.cat-card:hover .cat-card-image {
+    transform: scale(1.05);
+    opacity: 0.9;
+    filter: brightness(1.1);
+}
+
+.cat-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cat-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.cat-name-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cat-name-link:hover .cat-name {
+    color: #fff066;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.cat-birth-year {
+    font-family: 'Roboto', sans-serif;
+    color: #c6c6c6;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cat-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffc107, transparent);
+    margin: 1rem 0;
+}
+
+.cat-photo-count {
+    font-family: 'Roboto', sans-serif;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cat-bio {
+    font-family: 'Roboto', sans-serif;
+    color: #d0d0d0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* ============================ */
+/* Cat Detail Page Styles ++++++ */
+/* ============================ */
+.cat-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/assets/img/cats-bg.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.cat-gallery {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/assets/img/cats-bg.webp');
+    background-size: cover;
+    background-position: bottom center;
+}
+
+
+
+@keyframes rainbow-memorial {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ============================ */
+/* Loading States +++++++++++++ */
+/* ============================ */
+.loading-cats,
+.loading-photos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    color: #ffc107;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+.loading-cats i,
+.loading-photos i {
+    margin-right: 0.5rem;
+    animation: spin 1s linear infinite;
+}
+
+/* ============================ */
+/* Mobile Responsiveness ++++++++ */
+/* ============================ */
+@media (max-width: 768px) {
+    .cat-card-image {
+        height: 200px;
+    }
+
+    .cat-info {
+        padding: 1rem;
+    }
+
+    .cat-name {
+        font-size: 1.5rem;
+    }
+
+    .cat-birth-year {
+        font-size: 1rem;
+    }
+
+    .cat-bio {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cat-card-image {
+        height: 180px;
+    }
+
+    .cat-info {
+        padding: 0.75rem;
+    }
+
+    .cat-name {
+        font-size: 1.3rem;
+    }
+
+    .cat-birth-year {
+        font-size: 0.9rem;
+    }
+
+    .cat-bio {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .cat-photo-count {
+        font-size: 0.8rem;
+    }
 }
 
 
@@ -1312,7 +1694,7 @@ section.video-hero {
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
-    color: #ffc107;
+    color: var(--primary-yellow);
 }
 
 .nav-link {
@@ -1324,7 +1706,7 @@ section.video-hero {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #ffc107;
+    color: var(--primary-yellow);
     transform: scale(1.1);
 }
 
@@ -1338,8 +1720,8 @@ section.video-hero {
     .nav-link:focus {
         transform: none;
         /* Remove scale effect */
-        color: #ffc107;
-        text-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
+        color: var(--primary-yellow);
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
         /* Add glow instead */
     }
 }
@@ -1366,4 +1748,399 @@ footer p {
 footer .fab,
 footer .fa-brands {
     color: aqua
+}
+
+/* ============================ */
+/* Social Media Animation Utilities */
+/* ============================ */
+
+/* Social icon fade animation classes for consistent timing */
+.social-fade-duration-1-8 {
+    --fa-animation-duration: 1.8s;
+    --fa-fade-opacity: 0.4;
+}
+
+.social-fade-duration-1-9 {
+    --fa-animation-duration: 1.9s;
+    --fa-fade-opacity: 0.4;
+}
+
+.social-fade-duration-1-95 {
+    --fa-animation-duration: 1.95s;
+    --fa-fade-opacity: 0.4;
+}
+
+.social-fade-duration-2-1 {
+    --fa-animation-duration: 2.1s;
+    --fa-fade-opacity: 0.4;
+}
+
+.social-fade-duration-2-25 {
+    --fa-animation-duration: 2.25s;
+    --fa-fade-opacity: 0.4;
+}
+
+.social-fade-duration-2-3 {
+    --fa-animation-duration: 2.3s;
+    --fa-fade-opacity: 0.4;
+}
+
+/* Hero section social icons use different opacity */
+.social-fade-duration-1-8-hero {
+    --fa-animation-duration: 1.8s;
+    --fa-fade-opacity: 0.5;
+}
+
+.social-fade-duration-1-9-hero {
+    --fa-animation-duration: 1.9s;
+    --fa-fade-opacity: 0.5;
+}
+
+.social-fade-duration-1-95-hero {
+    --fa-animation-duration: 1.95s;
+    --fa-fade-opacity: 0.5;
+}
+
+.social-fade-duration-2-1-hero {
+    --fa-animation-duration: 2.1s;
+    --fa-fade-opacity: 0.5;
+}
+
+.social-fade-duration-2-25-hero {
+    --fa-animation-duration: 2.25s;
+    --fa-fade-opacity: 0.5;
+}
+
+.social-fade-duration-2-3-hero {
+    --fa-animation-duration: 2.3s;
+    --fa-fade-opacity: 0.5;
+}
+
+/* ============================ */
+/* Text Shadow Enhancements     */
+/* ============================ */
+
+/* Ensure text shadows work well on various backgrounds */
+@supports (text-shadow: 0 0 0 transparent) {
+
+    /* All headings get enhanced shadows for cross-background compatibility */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        /* Multi-layer shadow for maximum readability */
+        text-shadow:
+            0 1px 1px rgba(0, 0, 0, 0.8),
+            0 2px 2px rgba(0, 0, 0, 0.4),
+            0 1px 0px rgba(0, 0, 0, 1);
+    }
+
+    /* Stronger shadows for large headings on video backgrounds */
+    .video-hero h1,
+    .intro-gallery figcaption {
+        text-shadow:
+            0 2px 4px rgba(0, 0, 0, 0.9),
+            0 4px 8px rgba(0, 0, 0, 0.5),
+            0 1px 0px rgba(0, 0, 0, 1);
+    }
+}
+
+/* Fallback for browsers without text-shadow support (extremely rare) */
+@supports not (text-shadow: 0 0 0 transparent) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        /* Add a subtle background for contrast as fallback */
+        background: rgba(0, 0, 0, 0.1);
+        padding: 0.1em 0.2em;
+        border-radius: 2px;
+    }
+}
+
+/* ============================ */
+/* Skip Navigation & Enhanced Focus Management */
+/* ============================ */
+
+/* Skip Navigation Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-yellow);
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0 0 4px 4px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* Enhanced Focus States for Better Keyboard Navigation */
+
+/* Video Controls Enhanced Focus */
+.control-btn:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 2px;
+    background: rgba(255, 215, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Gallery Items Focus Enhancement */
+.gallery-item a:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.gallery-item a:focus img {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Video Cards Focus Enhancement */
+.video-card:focus-within {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 12px;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Social Icons Focus Enhancement */
+.social-icon:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 6px;
+    border-radius: 8px;
+    transform: scale(1.2);
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Navigation Focus Enhancement */
+.nav-link:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 4px;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Button Focus Enhancement */
+.btn:focus,
+button:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 2px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Form Elements Focus Enhancement */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+/* Lightbox Focus Management */
+.lightbox {
+    /* Ensure lightbox can receive focus */
+    outline: none;
+}
+
+.lightbox:focus {
+    /* Remove default outline when programmatically focused */
+    outline: none;
+}
+
+/* Enhanced close button focus for lightbox */
+.lb-close:focus {
+    outline: 3px solid var(--primary-yellow) !important;
+    outline-offset: 3px !important;
+    background: rgba(255, 215, 0, 0.2) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Navigation arrows focus in lightbox */
+.lb-prev:focus,
+.lb-next:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 3px;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Video Play Overlay Focus */
+.video-play-overlay:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 12px;
+}
+
+.video-play-overlay:focus .play-button {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Client Logo Focus Enhancement */
+.client-section a:focus img {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 8px;
+    transform: scale(1.05);
+}
+
+/* Portfolio Cards Focus Enhancement */
+.intro-inner:focus-within {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 20px;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+/* Progress Bar Focus for Video Controls */
+.progress-bar:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Volume Slider Focus */
+.volume-slider:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+}
+
+/* Back Navigation Focus Enhancement */
+.back-nav a:focus {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 8px;
+    transform: translateX(-2px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Skills Items Focus Enhancement */
+.skill-item:focus-within {
+    outline: 3px solid var(--primary-yellow);
+    outline-offset: 4px;
+    border-radius: 20px;
+    transform: translateY(-4px);
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.25);
+}
+
+/* Focus Visible Only - Hide Focus for Mouse Users */
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Smooth focus transitions for users who don't prefer reduced motion */
+    .skip-link,
+    .control-btn,
+    .social-icon,
+    .nav-link,
+    .gallery-item a,
+    .video-card,
+    .back-nav a {
+        transition: all 0.2s ease;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+
+    .skip-link:focus,
+    .control-btn:focus,
+    .social-icon:focus,
+    .nav-link:focus,
+    .gallery-item a:focus,
+    .btn:focus {
+        outline-width: 4px;
+        outline-offset: 3px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    .skip-link,
+    .control-btn,
+    .social-icon,
+    .nav-link,
+    .gallery-item a,
+    .video-card,
+    .back-nav a,
+    .video-play-overlay .play-button {
+        transition: none;
+        transform: none;
+    }
+
+    .control-btn:focus,
+    .social-icon:focus,
+    .gallery-item a:focus img,
+    .video-card:focus-within,
+    .back-nav a:focus {
+        transform: none;
+    }
+}
+
+/* Focus Management Utilities */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Keyboard Navigation Hints */
+.keyboard-hint {
+    font-size: 0.8rem;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Focus trap helper for modals/lightbox */
+.focus-trap {
+    /* Applied via JavaScript to elements that should trap focus */
+}
+
+/* Enhanced keyboard indicator for interactive elements */
+[tabindex]:focus,
+[role="button"]:focus,
+[role="link"]:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
 }

@@ -1,0 +1,58 @@
+{
+    "name": "Bella",
+    "birthYear": "2020 - 2024",
+    "memorial": "true",
+    "shortBio": "Bella Grace, the youngest member of the NCHurricats family, was a petite calico tornado who brought endless energy and mischief to every day. Her playful antics and boundless curiosity kept the entire NCHurricats crew on their toes.",
+    "bio": "Bella Grace is the youngest member of the NCHurricats family and brings endless energy and mischief to every day. This petite calico tornado has turned household mayhem into an art form, with a particular talent for finding the most inconvenient places to nap and the most expensive things to knock over. Despite her chaotic tendencies, Bella Grace is incredibly affectionate and has never met a human she didn't want to befriend immediately. She's famous for her acrobatic abilities, her love of interactive toys, and her uncanny knack for appearing exactly where she's not supposed to be at the most inopportune moments. Her playful antics and boundless curiosity keep the entire NCHurricats crew on their toes.",
+    "cardThumbnail": "assets/img/cats/bella/bella-card.webp",
+    "photos": [
+        {
+            "thumb": "https://placekitten.com/300/200?random=61",
+            "full": "https://placekitten.com/800/600?random=61",
+            "caption": "Tornado Bella in Action",
+            "date": "2024-12-13"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=62",
+            "full": "https://placekitten.com/800/600?random=62",
+            "caption": "Inconvenient Nap Spot Champion",
+            "date": "2024-12-08"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=63",
+            "full": "https://placekitten.com/800/600?random=63",
+            "caption": "Professional Troublemaker",
+            "date": "2024-12-03"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=64",
+            "full": "https://placekitten.com/800/600?random=64",
+            "caption": "Instant Best Friend Mode",
+            "date": "2024-11-26"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=65",
+            "full": "https://placekitten.com/800/600?random=65",
+            "caption": "Acrobatic Superstar",
+            "date": "2024-11-21"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=66",
+            "full": "https://placekitten.com/800/600?random=66",
+            "caption": "Interactive Toy Champion",
+            "date": "2024-11-14"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=67",
+            "full": "https://placekitten.com/800/600?random=67",
+            "caption": "Wrong Place, Right Time",
+            "date": "2024-11-07"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=68",
+            "full": "https://placekitten.com/800/600?random=68",
+            "caption": "Boundless Curiosity",
+            "date": "2024-11-01"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "name": "Teddy",
+    "birthYear": "Born in 2020",
+    "shortBio": "Teddy is the gentle giant and unofficial therapist of the NCHurricats crew. This fluffy orange tabby has mastered the art of the perfect purr and believes that every human problem can be solved with a well-timed head bonk and some quality lap time.",
+    "bio": "Teddy is the gentle giant and unofficial therapist of the NCHurricats crew. This fluffy orange tabby has mastered the art of the perfect purr and believes that every human problem can be solved with a well-timed head bonk and some quality lap time. Teddy's calm demeanor and patient nature make him the perfect mediator when his siblings get a little too rambunctious. He's particularly fond of sunny windowsills, soft blankets, and lengthy grooming sessions that could rival any spa day. Despite his laid-back personality, Teddy has a secret weakness for feather toys and will transform into a playful kitten at the first sight of one dancing through the air.",
+    "cardThumbnail": "assets/img/cats/teddy/teddy-card.webp",
+    "photos": [
+        {
+            "thumb": "https://placekitten.com/300/200?random=21",
+            "full": "https://placekitten.com/800/600?random=21",
+            "caption": "Teddy's Therapeutic Purr Session",
+            "date": "2024-12-12"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=22",
+            "full": "https://placekitten.com/800/600?random=22",
+            "caption": "Master of the Head Bonk",
+            "date": "2024-12-07"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=23",
+            "full": "https://placekitten.com/800/600?random=23",
+            "caption": "Windowsill Meditation",
+            "date": "2024-12-02"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=24",
+            "full": "https://placekitten.com/800/600?random=24",
+            "caption": "Blanket Fortress Builder",
+            "date": "2024-11-25"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=25",
+            "full": "https://placekitten.com/800/600?random=25",
+            "caption": "Spa Day Grooming",
+            "date": "2024-11-18"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=26",
+            "full": "https://placekitten.com/800/600?random=26",
+            "caption": "Feather Toy Excitement",
+            "date": "2024-11-12"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=27",
+            "full": "https://placekitten.com/800/600?random=27",
+            "caption": "Perfect Lap Position",
+            "date": "2024-11-05"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=28",
+            "full": "https://placekitten.com/800/600?random=28",
+            "caption": "Peaceful Afternoon Rest",
+            "date": "2024-10-30"
+        }
+    ]
+}

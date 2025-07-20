@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The NCHurricats - chuckcopeland.com</title>
+
+        <!-- Fonts & Icons -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+
+        <!-- Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Custom Styles -->
+        <link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+
+    <body class="bg-dark text-light">
+
+        <!-- Header landmark + Navbar -->
+        <header class="site-header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+                <div class="container">
+                    <a class="navbar-brand fw-bold" href="index.html">ChuckCopeland.com</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="video.html">Videos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="photo.html">Photos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="social.html">Social</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mailto:chuck@chuckcopeland.com"><i
+                                        class="fa-solid fa-envelope fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main landmark -->
+        <main id="main-content">
+
+            <!-- Video Hero -->
+            <section class="video-cat">
+                <video autoplay muted loop playsinline poster="assets/img/cats-hero-fallback.webp" loading="lazy">
+                    <source src="assets/video/cat-hero.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay d-flex flex-column justify-content-center align-items-center h-100">
+                    <div class="hero-text rounded-5 p-5 d-flex align-items-center flex-column">
+                        <div class="text-center">
+
+                            <img src="assets/img/cats-heads.png" alt="NCHurricats Logo" class="logo-full"
+                                style="max-width: 200px;"><br />
+                            <img src="assets/img/cats-logo.png" alt="The NCHurricats" class="mb-3 logo-full"
+                                style="max-width: 400px;">
+                            <p class="lead">Bailey &bull; Teddy &bull; Bella Grace &bull; Stormy</p>
+
+                            <!-- NCHurricats Social Links -->
+                            <div class="d-flex flex-wrap justify-content-center gap-4">
+                                <a href="https://www.instagram.com/nchurricats/" target="_blank"
+                                    rel="noopener noreferrer" class="video-icon" aria-label="Instagram"><i
+                                        class="fab fa-instagram fa-fade fa-2x"
+                                        style="--fa-animation-duration: 1.9s; --fa-fade-opacity: 0.5;"></i></a>
+                                <a href="https://bsky.app/profile/nchurricats.bsky.social" target="_blank"
+                                    rel="noopener noreferrer" class="video-icon" aria-label="Bluesky"><i
+                                        class="fa-brands fa-bluesky fa-fade fa-2x"
+                                        style="--fa-animation-duration: 2.1s; --fa-fade-opacity: 0.5;"></i></a>
+                                <a href="https://www.youtube.com/@nchurricats" target="_blank" rel="noopener noreferrer"
+                                    class="video-icon" aria-label="YouTube"><i class="fab fa-youtube fa-fade fa-2x"
+                                        style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.5;"></i></a>
+                                <a href="https://www.tiktok.com/@nchurricats" target="_blank" rel="noopener noreferrer"
+                                    class="video-icon" aria-label="TikTok"><i class="fab fa-tiktok fa-fade fa-2x"
+                                        style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.5;"></i></a>
+                                <a href="https://www.threads.net/@nchurricats" target="_blank" rel="noopener noreferrer"
+                                    class="video-icon" aria-label="Threads"><i class="fab fa-threads fa-fade fa-2x"
+                                        style="--fa-animation-duration: 1.95s; --fa-fade-opacity: 0.5;"></i></a>
+                                <a href="https://www.facebook.com/thehurricats/" target="_blank"
+                                    rel="noopener noreferrer" class="video-icon" aria-label="Facebook"><i
+                                        class="fab fa-facebook fa-fade fa-2x"
+                                        style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.5;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scroll-indicator" id="scrollIndicator">
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cats Gallery -->
+            <section class="cats-gallery mt-3 mt-lg-5 mt-sm-4 py-5">
+                <div class="container">
+                    <h2 class="text-center mb-5">Meet The Cats</h2>
+                    <div class="row" id="catsGrid">
+                        <!-- Loading state -->
+                        <div class="col-12 text-center">
+                            <div class="loading-cats">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Loading the cats...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer landmark -->
+        <footer class="bg-black text-light text-center py-4 border-top border-secondary">
+            <div class="container">
+                <p class="mb-1">© 2019, 2025 ChuckCopeland.com</p>
+                <p class="small">Winterville, North Carolina</p>
+                <p>Created by me with &nbsp; <i class="fa-solid fa-mug-hot fa-lg"></i>,&nbsp; <i
+                        class="fa-solid fa-computer fa-lg"></i>,
+                    &nbsp;and
+                    VS Code.</p>
+
+                <!-- Social Icons -->
+                <div class="d-flex flex-wrap justify-content-center mt-3 gap-3">
+                    <a href="https://www.linkedin.com/in/chuckcopeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="LinkedIn"><i class="fab fa-linkedin fa-fade"
+                            style="--fa-animation-duration: 2.3s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://bsky.app/profile/@chuckcopeland.com" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Bluesky"><i class="fa-brands fa-bluesky fa-fade"
+                            style="--fa-animation-duration: 2.1s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.youtube.com/@chuckcopeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="YouTube"><i class="fab fa-youtube fa-fade"
+                            style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.instagram.com/chuck_copeland/" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Instagram"><i class="fab fa-instagram fa-fade"
+                            style="--fa-animation-duration: 1.9s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.tiktok.com/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="TikTok"><i class="fab fa-tiktok fa-fade"
+                            style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.threads.net/@chuck_copeland" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Bluesky"><i class="fab fa-threads fa-fade"
+                            style="--fa-animation-duration: 1.95s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://www.facebook.com/chuckcopelandcom/" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="Facebook"><i class="fab fa-facebook fa-fade"
+                            style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
+                    <a href=" https://x.com/chuckcopelandwx" target="_blank" rel="noopener noreferrer"
+                        class="social-icon fs-3 fs-sm-2" aria-label="X"><i class="fab fa-x-twitter fa-fade"
+                            style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://kit.fontawesome.com/04fcf90301.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/cats.js"></script>
+
+    </body>
+
+</html>

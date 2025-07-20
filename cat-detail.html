@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Photo Gallery - chuckcopeland.com</title>
+        <title>Cat Gallery - chuckcopeland.com</title>
 
         <!-- Fonts & Icons -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +20,11 @@
         <!-- Lightbox -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css" rel="stylesheet" />
 
-
-        <!-- Your Custom Styles -->
+        <!-- Custom Styles -->
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
 
     <body class="bg-dark text-light">
-        <a href="#main-content" class="skip-link">Skip to main content</a>
 
         <!-- Header landmark + Navbar -->
         <header class="site-header">
@@ -41,7 +39,7 @@
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="video.html">Videos</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="photo.html">Photos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="photo.html">Photos</a></li>
                             <li class="nav-item"><a class="nav-link" href="social.html">Social</a></li>
                             <li class="nav-item"><a class="nav-link" href="mailto:chuck@chuckcopeland.com"><i
                                         class="fa-solid fa-envelope fa-lg"></i></a></li>
@@ -54,19 +52,48 @@
         <!-- Main landmark -->
         <main id="main-content">
 
-            <section class="photo-header py-5">
+            <!-- Back Navigation -->
+            <section class="back-nav">
                 <div class="container">
-                    <h1 class="text-center">Photography</h1>
-                    <h6 class="mb-5 text-center">Amateur photographer, but I love capturing moments.</h6>
+                    <a href="nchurricats.html" class="mt-3 btn btn-outline-warning">
+                        <i class="fas fa-arrow-left"></i> Back to The NCHurricats
+                    </a>
                 </div>
             </section>
 
-            <!-- Gallery -->
-            <section class="photo-gallery py-5">
+            <!-- Cat Header -->
+            <section class="cat-header py-5">
                 <div class="container">
-                    <div class="row" id="galleryGrid"></div>
+                    <h1 class="text-center" id="catName">Loading...</h1>
+                    <h6 class="mb-5 text-center" id="catBio">Loading cat information...</h6>
                 </div>
             </section>
+
+            <!-- Photo Gallery -->
+            <section class="cat-gallery py-5">
+                <div class="container">
+                    <div class="row" id="catGalleryGrid">
+                        <!-- Loading state -->
+                        <div class="col-12 text-center">
+                            <div class="loading-photos">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Loading photos...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Videos Section (placeholder) -->
+            <section class="cat-videos py-5" style="display: none;" id="videosSection">
+                <div class="container">
+                    <h2 class="text-center mb-5">Videos</h2>
+                    <div class="row" id="catVideosGrid">
+                        <!-- Videos will be added here in the future -->
+                    </div>
+                </div>
+            </section>
+
         </main>
 
         <!-- Footer landmark -->
@@ -79,44 +106,41 @@
                     &nbsp;and
                     VS Code.</p>
 
-                <span style="color: white;"></span>
-
                 <!-- Social Icons -->
                 <div class="d-flex flex-wrap justify-content-center mt-3 gap-3">
                     <a href="https://www.linkedin.com/in/chuckcopeland" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin fa-fade social-fade-duration-2-3"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="LinkedIn"><i class="fab fa-linkedin fa-fade"
+                            style="--fa-animation-duration: 2.3s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://bsky.app/profile/@chuckcopeland.com" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="Bluesky"><i
-                            class="fa-brands fa-bluesky fa-fade social-fade-duration-2-1"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="Bluesky"><i class="fa-brands fa-bluesky fa-fade"
+                            style="--fa-animation-duration: 2.1s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://www.youtube.com/@chuckcopeland" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="YouTube"><i
-                            class="fab fa-youtube fa-fade social-fade-duration-1-8"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="YouTube"><i class="fab fa-youtube fa-fade"
+                            style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://www.instagram.com/chuck_copeland/" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="Instagram"><i
-                            class="fab fa-instagram fa-fade social-fade-duration-1-9"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="Instagram"><i class="fab fa-instagram fa-fade"
+                            style="--fa-animation-duration: 1.9s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://www.tiktok.com/@chuck_copeland" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="TikTok"><i
-                            class="fab fa-tiktok fa-fade social-fade-duration-2-25"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="TikTok"><i class="fab fa-tiktok fa-fade"
+                            style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://www.threads.net/@chuck_copeland" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="Threads"><i
-                            class="fab fa-threads fa-fade social-fade-duration-1-95"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="Threads"><i class="fab fa-threads fa-fade"
+                            style="--fa-animation-duration: 1.95s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://www.facebook.com/chuckcopelandcom/" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="Facebook"><i
-                            class="fab fa-facebook fa-fade social-fade-duration-1-8"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="Facebook"><i class="fab fa-facebook fa-fade"
+                            style="--fa-animation-duration: 1.8s; --fa-fade-opacity: 0.4;"></i></a>
                     <a href=" https://x.com/chuckcopelandwx" target="_blank" rel="noopener noreferrer"
-                        class="social-icon fs-3 fs-sm-2" aria-label="X"><i
-                            class="fab fa-x-twitter fa-fade social-fade-duration-2-25"></i></a>
+                        class="social-icon fs-3 fs-sm-2" aria-label="X"><i class="fab fa-x-twitter fa-fade"
+                            style="--fa-animation-duration: 2.25s; --fa-fade-opacity: 0.4;"></i></a>
                 </div>
             </div>
         </footer>
 
-        <script src=" https://kit.fontawesome.com/04fcf90301.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/04fcf90301.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/lightbox-edit-250712.js"></script>
-        <script src="assets/js/gallery.js"></script>
-        <script src="assets/js/keyboard-navigation.js"></script>
+        <script src="assets/js/cat-detail.js"></script>
 
     </body>
 

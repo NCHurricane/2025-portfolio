@@ -1,3 +1,17 @@
+// ============================================================================
+// UTILITY FUNCTIONS - Define once at the top
+// ============================================================================
+
+// URL sanitization function
+function sanitizeProjectId(id) {
+  if (!id) return null;
+  var sanitized = id.replace(/[^a-zA-Z0-9\-_]/g, '');
+  if (sanitized.length > 50) {
+    sanitized = sanitized.substring(0, 50);
+  }
+  return sanitized.length > 0 ? sanitized : null;
+}
+
 // Helper function to hide loading state
 function hideLoading() {
   const loadingElement = document.querySelector('.video-loading');
@@ -8,7 +22,6 @@ function hideLoading() {
 
 // Helper function to generate poster image path from video URL
 function generatePosterPath(videoUrl) {
-  // Extract filename without extension and create poster path
   const videoName = videoUrl.split('/').pop().replace(/\.(mp4|webm|ogg)$/i, '');
   return `assets/video/gallery/thumbs/${videoName}.webp`;
 }
@@ -26,11 +39,46 @@ function getVideoType(videoUrl) {
   }
 }
 
+// Format time helper
+function formatTime(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+// ============================================================================
+// VIDEO CONTROL FUNCTIONS
+// ============================================================================
+
+// Global cleanup registry to track all event listeners
+var videoEventRegistry = {
+  listeners: [],
+
+  // Add a listener to the registry
+  add: function (element, event, handler, options) {
+    element.addEventListener(event, handler, options);
+    this.listeners.push({
+      element: element,
+      event: event,
+      handler: handler,
+      options: options
+    });
+  },
+
+  // Remove all registered listeners
+  cleanup: function () {
+    this.listeners.forEach(function (listener) {
+      listener.element.removeEventListener(listener.event, listener.handler, listener.options);
+    });
+    this.listeners = [];
+    console.log('Video event listeners cleaned up');
+  }
+};
+
 // Setup custom play button overlay for better UX
 function setupPlayButtonOverlay(video) {
   const wrapper = video.closest('.video-wrapper');
 
-  // Create custom play button overlay
   const playOverlay = document.createElement('div');
   playOverlay.className = 'video-play-overlay';
   playOverlay.innerHTML = `
@@ -41,28 +89,26 @@ function setupPlayButtonOverlay(video) {
 
   wrapper.appendChild(playOverlay);
 
-  // Hide overlay when video starts playing
-  video.addEventListener('play', function () {
+  // Use registry for all event listeners
+  videoEventRegistry.add(video, 'play', function () {
     playOverlay.style.opacity = '0';
     playOverlay.style.pointerEvents = 'none';
   });
 
-  // Show overlay when video is paused/ended
-  video.addEventListener('pause', function () {
+  videoEventRegistry.add(video, 'pause', function () {
     if (!video.ended) {
       playOverlay.style.opacity = '1';
       playOverlay.style.pointerEvents = 'auto';
     }
   });
 
-  video.addEventListener('ended', function () {
+  videoEventRegistry.add(video, 'ended', function () {
     playOverlay.style.opacity = '1';
     playOverlay.style.pointerEvents = 'auto';
     playOverlay.querySelector('i').className = 'fas fa-redo';
   });
 
-  // Play video when overlay is clicked
-  playOverlay.addEventListener('click', function () {
+  videoEventRegistry.add(playOverlay, 'click', function () {
     if (video.ended) {
       video.currentTime = 0;
       playOverlay.querySelector('i').className = 'fas fa-play';
@@ -84,49 +130,51 @@ function setupCustomControls(video) {
   const currentTimeSpan = controls.querySelector('.current-time');
   const durationSpan = controls.querySelector('.duration');
 
-  let videoControlsTimeout;
+  var videoControlsTimeout;
 
-  // Show/hide controls on mouse movement
-  wrapper.addEventListener('mousemove', function () {
+  // Mouse movement handling with cleanup
+  function handleMouseMove() {
     controls.style.opacity = '1';
     clearTimeout(videoControlsTimeout);
-    videoControlsTimeout = setTimeout(() => {
+    videoControlsTimeout = setTimeout(function () {
       if (!video.paused) {
         controls.style.opacity = '0';
       }
     }, 3000);
-  });
+  }
 
-  wrapper.addEventListener('mouseleave', function () {
+  function handleMouseLeave() {
     if (!video.paused) {
       controls.style.opacity = '0';
     }
-  });
+  }
+
+  videoEventRegistry.add(wrapper, 'mousemove', handleMouseMove);
+  videoEventRegistry.add(wrapper, 'mouseleave', handleMouseLeave);
 
   // Play/Pause functionality
-  playPauseBtn.addEventListener('click', function () {
+  function handlePlayPause() {
     if (video.paused) {
       video.play();
     } else {
       video.pause();
     }
-  });
+  }
 
-  video.addEventListener('play', function () {
+  function handlePlay() {
     playPauseBtn.querySelector('i').className = 'fas fa-pause';
-  });
+  }
 
-  video.addEventListener('pause', function () {
+  function handlePause() {
     playPauseBtn.querySelector('i').className = 'fas fa-play';
     controls.style.opacity = '1';
-  });
+  }
+
+  videoEventRegistry.add(playPauseBtn, 'click', handlePlayPause);
+  videoEventRegistry.add(video, 'play', handlePlay);
+  videoEventRegistry.add(video, 'pause', handlePause);
 
   // Mute functionality
-  muteBtn.addEventListener('click', function () {
-    video.muted = !video.muted;
-    updateMuteButton();
-  });
-
   function updateMuteButton() {
     const icon = muteBtn.querySelector('i');
     if (video.muted || video.volume === 0) {
@@ -138,33 +186,45 @@ function setupCustomControls(video) {
     }
   }
 
+  function handleMute() {
+    video.muted = !video.muted;
+    updateMuteButton();
+  }
+
+  videoEventRegistry.add(muteBtn, 'click', handleMute);
+
   // Volume control
-  volumeSlider.addEventListener('input', function () {
+  function handleVolumeChange() {
     video.volume = this.value;
     video.muted = false;
     updateMuteButton();
-  });
+  }
+
+  videoEventRegistry.add(volumeSlider, 'input', handleVolumeChange);
 
   // Progress bar functionality
-  video.addEventListener('timeupdate', function () {
+  function handleTimeUpdate() {
     const percent = (video.currentTime / video.duration) * 100;
     progressFilled.style.width = percent + '%';
-
     currentTimeSpan.textContent = formatTime(video.currentTime);
-  });
+  }
 
-  video.addEventListener('loadedmetadata', function () {
+  function handleLoadedMetadata() {
     durationSpan.textContent = formatTime(video.duration);
-  });
+  }
 
-  progressBar.addEventListener('click', function (e) {
+  function handleProgressClick(e) {
     const rect = progressBar.getBoundingClientRect();
     const percent = (e.clientX - rect.left) / rect.width;
     video.currentTime = percent * video.duration;
-  });
+  }
+
+  videoEventRegistry.add(video, 'timeupdate', handleTimeUpdate);
+  videoEventRegistry.add(video, 'loadedmetadata', handleLoadedMetadata);
+  videoEventRegistry.add(progressBar, 'click', handleProgressClick);
 
   // Fullscreen functionality
-  fullscreenBtn.addEventListener('click', function () {
+  function handleFullscreen() {
     if (video.requestFullscreen) {
       video.requestFullscreen();
     } else if (video.webkitRequestFullscreen) {
@@ -172,39 +232,36 @@ function setupCustomControls(video) {
     } else if (video.msRequestFullscreen) {
       video.msRequestFullscreen();
     }
-  });
-
-  // Format time helper
-  function formatTime(seconds) {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
   }
 
-  // Prevent right-click context menu on video
-  video.addEventListener('contextmenu', function (e) {
+  videoEventRegistry.add(fullscreenBtn, 'click', handleFullscreen);
+
+  // Context menu prevention
+  function handleContextMenu(e) {
     e.preventDefault();
-  });
+  }
+
+  videoEventRegistry.add(video, 'contextmenu', handleContextMenu);
 }
+
 
 // Setup event listeners for self-hosted videos
 function setupVideoEventListeners(video) {
-  // Handle video loading states
-  video.addEventListener('loadstart', function () {
+  function handleLoadStart() {
     console.log('Video loading started');
-  });
+  }
 
-  video.addEventListener('loadedmetadata', function () {
+  function handleLoadedMetadata() {
     console.log('Video metadata loaded');
     hideLoading();
-  });
+  }
 
-  video.addEventListener('canplay', function () {
+  function handleCanPlay() {
     console.log('Video can start playing');
     hideLoading();
-  });
+  }
 
-  video.addEventListener('error', function (e) {
+  function handleError(e) {
     console.error('Video error:', e);
     const errorMsg = `
       <div class="alert alert-warning" role="alert">
@@ -218,10 +275,9 @@ function setupVideoEventListeners(video) {
       </div>
     `;
     video.parentElement.innerHTML = errorMsg;
-  });
+  }
 
-  // Keyboard controls for accessibility
-  video.addEventListener('keydown', function (e) {
+  function handleKeydown(e) {
     switch (e.code) {
       case 'Space':
         e.preventDefault();
@@ -250,17 +306,64 @@ function setupVideoEventListeners(video) {
         }
         break;
     }
-  });
+  }
+
+  // Register all event listeners
+  videoEventRegistry.add(video, 'loadstart', handleLoadStart);
+  videoEventRegistry.add(video, 'loadedmetadata', handleLoadedMetadata);
+  videoEventRegistry.add(video, 'canplay', handleCanPlay);
+  videoEventRegistry.add(video, 'error', handleError);
+  videoEventRegistry.add(video, 'keydown', handleKeydown);
 }
+
+// ============================================================================
+// PAGE CLEANUP SYSTEM
+// ============================================================================
+
+// Cleanup when page is about to unload
+function setupPageCleanup() {
+  function handleBeforeUnload() {
+    videoEventRegistry.cleanup();
+  }
+
+  function handlePageHide() {
+    videoEventRegistry.cleanup();
+  }
+
+  // Handle page navigation/refresh
+  window.addEventListener('beforeunload', handleBeforeUnload);
+  window.addEventListener('pagehide', handlePageHide);
+
+  // Handle browser back button (for single-page app behavior)
+  window.addEventListener('popstate', handleBeforeUnload);
+}
+
+// Initialize cleanup system when page loads
+document.addEventListener('DOMContentLoaded', function () {
+  setupPageCleanup();
+});
+
+// ============================================================================
+// MAIN EXECUTION
+// ============================================================================
 
 const container = document.getElementById("projectDetail");
 
 if (container) {
   fetch("data/projects.json")
-    .then(res => res.json())
-    .then(projects => {
-      const id = new URLSearchParams(window.location.search).get("id");
-      const project = projects.find(p => p.id === id);
+    .then(function (res) { return res.json(); })
+    .then(function (projects) {
+      // Get and sanitize the project ID
+      const rawId = new URLSearchParams(window.location.search).get("id");
+      const id = sanitizeProjectId(rawId);
+
+      // Validate ID
+      if (!id) {
+        container.innerHTML = "<p class='text-danger'>Invalid or missing project ID.</p>";
+        return;
+      }
+
+      const project = projects.find(function (p) { return p.id === id; });
 
       if (!project) {
         container.innerHTML = "<p class='text-danger'>Project not found.</p>";
@@ -282,14 +385,12 @@ if (container) {
         project.videoUrl.includes('.webm') ||
         project.videoUrl.includes('.ogg');
 
-      let media;
-      let videoAttributes = '';
+      var media;
+      var videoAttributes = '';
 
       if (isLocalVideo) {
-        // Self-hosted video configuration - custom controls to prevent downloads
+        // Self-hosted video configuration
         videoAttributes = 'preload="metadata" playsinline disablepictureinpicture controlslist="nodownload"';
-
-        // Generate poster image path if not provided
         const posterImage = project.thumbnail || generatePosterPath(project.videoUrl);
 
         media = `
@@ -342,7 +443,7 @@ if (container) {
       }
 
       // Build the complete video detail page
-      setTimeout(() => {
+      setTimeout(function () {
         container.innerHTML = `
           <div class="back-nav">
             <a href="video.html" class="mt-3 btn btn-outline-warning">
@@ -354,7 +455,7 @@ if (container) {
             
             <div class="video-info">
               <h2>${project.title}</h2>
-                            ${project.description ? `<div class="description">${project.description}</div>` : ''}
+              ${project.description ? `<div class="description">${project.description}</div>` : ''}
               <div class="video-meta">
                 <div class="meta-item">
                   <span class="meta-label">Client</span>
@@ -373,8 +474,6 @@ if (container) {
                   <span class="meta-value">${project.tools || 'Tool Not Listed'}</span>
                 </div>
               </div>
-              
-
             </div>
           </div>
         `;
@@ -390,119 +489,24 @@ if (container) {
         }
       }, 500);
     })
-    .catch(err => {
+    .catch(function (err) {
       console.error("Failed to load project detail:", err);
       container.innerHTML = "<p class='text-danger'>Error loading project details.</p>";
     });
 }
 
-// Helper function to hide loading state
-function hideLoading() {
-  const loadingElement = document.querySelector('.video-loading');
-  if (loadingElement) {
-    loadingElement.style.display = 'none';
-  }
-}
-
-// Helper function to generate poster image path from video URL
-function generatePosterPath(videoUrl) {
-  // Extract filename without extension and create poster path
-  const videoName = videoUrl.split('/').pop().replace(/\.(mp4|webm|ogg)$/i, '');
-  return `assets/video/gallery/thumbs/${videoName}.webp`;
-}
-function getVideoType(videoUrl) {
-  if (videoUrl.includes('youtube') || videoUrl.includes('youtu.be')) {
-    return 'YouTube Video';
-  } else if (videoUrl.includes('vimeo')) {
-    return 'Vimeo Video';
-  } else if (videoUrl.includes('.mp4') || videoUrl.includes('.webm') || videoUrl.includes('.ogg')) {
-    return 'Self-Hosted Video';
-  } else {
-    return 'Embedded Video';
-  }
-}
-
-// Setup event listeners for self-hosted videos
-function setupVideoEventListeners(video) {
-  // Handle video loading states
-  video.addEventListener('loadstart', function () {
-    console.log('Video loading started');
-  });
-
-  video.addEventListener('loadedmetadata', function () {
-    console.log('Video metadata loaded');
-    hideLoading();
-  });
-
-  video.addEventListener('canplay', function () {
-    console.log('Video can start playing');
-    hideLoading();
-  });
-
-  video.addEventListener('error', function (e) {
-    console.error('Video error:', e);
-    const errorMsg = `
-      <div class="alert alert-warning" role="alert">
-        <h5><i class="fas fa-exclamation-triangle"></i> Video Loading Issue</h5>
-        <p>There was a problem loading this video. You can try:</p>
-        <ul>
-          <li><a href="${video.src}" target="_blank">Opening the video directly</a></li>
-          <li>Refreshing the page</li>
-          <li>Checking your internet connection</li>
-        </ul>
-      </div>
-    `;
-    video.parentElement.innerHTML = errorMsg;
-  });
-
-  // Keyboard controls for accessibility
-  video.addEventListener('keydown', function (e) {
-    switch (e.code) {
-      case 'Space':
-        e.preventDefault();
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
-        }
-        break;
-      case 'ArrowLeft':
-        e.preventDefault();
-        video.currentTime = Math.max(0, video.currentTime - 10);
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        video.currentTime = Math.min(video.duration, video.currentTime + 10);
-        break;
-      case 'KeyM':
-        e.preventDefault();
-        video.muted = !video.muted;
-        break;
-      case 'KeyF':
-        e.preventDefault();
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        }
-        break;
-    }
-  });
-}
-
 // Handle responsive video sizing on window resize
-let windowResizeTimeout;
+var windowResizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(windowResizeTimeout);
   windowResizeTimeout = setTimeout(function () {
-    // Re-evaluate video container sizing if needed
     console.log('Window resized - video containers adjusted');
   }, 250);
 });
 
 // Initialize any special mobile video handling
 document.addEventListener('DOMContentLoaded', function () {
-  // Check if this is a mobile device
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
   if (isMobile) {
     console.log('Mobile device detected - adjusting video settings');
     document.body.classList.add('mobile-device');

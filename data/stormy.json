@@ -1,0 +1,57 @@
+{
+    "name": "Stormy",
+    "birthYear": "Born in 2024",
+    "shortBio": "Stormy is the dramatic diva and self-appointed supervisor of all household activities. This sleek gray beauty has perfected the art of the judgmental stare and isn't shy about expressing her opinions on everything from meal timing to furniture arrangements.",
+    "bio": "Stormy is the dramatic diva and self-appointed supervisor of all household activities. This sleek gray beauty has perfected the art of the judgmental stare and isn't shy about expressing her opinions on everything from meal timing to furniture arrangements. Stormy believes that every surface in the house exists solely for her convenience, and she takes her job as Chief Quality Inspector very seriously. Despite her sassy attitude, she's secretly a cuddlebug who loves late-night snuggle sessions and has a particular fondness for stealing warm spots right after someone gets up. Her independent spirit and fierce personality make her the undisputed queen of the NCHurricats household.",
+    "cardThumbnail": "assets/img/cats/stormy/stormy-card.webp",
+    "photos": [
+        {
+            "thumb": "https://placekitten.com/300/200?random=41",
+            "full": "https://placekitten.com/800/600?random=41",
+            "caption": "The Judgmental Stare Master",
+            "date": "2024-12-14"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=42",
+            "full": "https://placekitten.com/800/600?random=42",
+            "caption": "Household Supervisor on Duty",
+            "date": "2024-12-09"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=43",
+            "full": "https://placekitten.com/800/600?random=43",
+            "caption": "Quality Inspector Stormy",
+            "date": "2024-12-04"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=44",
+            "full": "https://placekitten.com/800/600?random=44",
+            "caption": "Claiming the Best Spot",
+            "date": "2024-11-27"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=45",
+            "full": "https://placekitten.com/800/600?random=45",
+            "caption": "Secret Cuddlebug Moment",
+            "date": "2024-11-22"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=46",
+            "full": "https://placekitten.com/800/600?random=46",
+            "caption": "Warm Spot Thief",
+            "date": "2024-11-16"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=47",
+            "full": "https://placekitten.com/800/600?random=47",
+            "caption": "Queen of the Castle",
+            "date": "2024-11-10"
+        },
+        {
+            "thumb": "https://placekitten.com/300/200?random=48",
+            "full": "https://placekitten.com/800/600?random=48",
+            "caption": "Late Night Snuggle Session",
+            "date": "2024-11-03"
+        }
+    ]
+}
