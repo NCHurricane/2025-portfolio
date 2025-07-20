@@ -1449,6 +1449,18 @@ section.video-cat {
     background-position: center;
 }
 
+@media (max-width: 768px) {
+    .hero-text img.logo-full {
+        max-width: 250px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text img.logo-full {
+        max-width: 200px !important;
+    }
+}
+
 /* ============================ */
 /* Cat Card Styles +++++++++++++ */
 /* ============================ */
@@ -1551,21 +1563,20 @@ section.video-cat {
     margin: 1rem 0;
 }
 
-.cat-photo-count {
-    font-family: 'Roboto', sans-serif;
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 .cat-bio {
     font-family: 'Roboto', sans-serif;
     color: #d0d0d0;
     font-size: 0.95rem;
     line-height: 1.5;
-    text-align: left;
+    text-align: center;
+}
+
+.cat-header h6 {
+    font-family: 'Roboto', sans-serif;
+    color: #d0d0d0;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
 }
 
 /* ============================ */
