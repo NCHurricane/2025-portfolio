@@ -236,18 +236,24 @@ section.video-hero {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    text-align: center;
 }
 
 .wheel {
     width: 12px;
     height: 24px;
-    background: var(--primary-yellow);
+    /* background: var(--primary-yellow); */
     border-radius: 2px;
     position: absolute;
     top: 8px;
-    left: 50%;
+    left: 25%;
     transform: translateX(-50%);
     animation: scroll-wheel 2s infinite;
+}
+
+.wheel i {
+    color: var(--primary-yellow);
+    transform: scale(1, -1);
 }
 
 @keyframes scroll-wheel {
