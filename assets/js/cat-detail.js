@@ -64,7 +64,7 @@ function renderPhotoGallery(photos, catName) {
 
     // Sort years in descending order (newest first)
     var years = Object.keys(photosByYear).sort(function (a, b) {
-        return b - a;
+        return a - b;
     });
 
     // Render photos grouped by year

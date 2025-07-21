@@ -6,52 +6,76 @@
     "cardThumbnail": "assets/img/cats/bailey/bailey-card.webp",
     "photos": [
         {
-            "thumb": "https://placekitten.com/300/200?random=1",
-            "full": "https://placekitten.com/800/600?random=1",
-            "caption": "Bailey's Morning Stretch",
-            "date": "2024-12-15"
+            "thumb": "assets/img/cats/bailey/2020/20201004-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201004.jpg",
+            "caption": "Bailey's First Photo",
+            "date": "2020-10-04"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=2",
-            "full": "https://placekitten.com/800/600?random=2",
-            "caption": "Exploring the Garden",
-            "date": "2024-12-10"
+            "thumb": "assets/img/cats/bailey/2020/20201101-david-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201101-david.jpg",
+            "caption": "Who Are These Masked Humans?",
+            "date": "2020-11-01"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=3",
-            "full": "https://placekitten.com/800/600?random=3",
-            "caption": "Cardboard Castle King",
-            "date": "2024-12-05"
+            "thumb": "assets/img/cats/bailey/2020/20201101-195501-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201101-195501.jpg",
+            "caption": "Making Himself at Home",
+            "date": "2020-11-01"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=4",
-            "full": "https://placekitten.com/800/600?random=4",
-            "caption": "Sunbathing Expert",
-            "date": "2024-11-28"
+            "thumb": "assets/img/cats/bailey/2020/20201105-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201105.jpg",
+            "caption": "Figuring Out the Hammock",
+            "date": "2020-11-05"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=5",
-            "full": "https://placekitten.com/800/600?random=5",
-            "caption": "Bird Watching Duty",
-            "date": "2024-11-20"
+            "thumb": "assets/img/cats/bailey/2020/20201120-195016-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201120-195016.jpg",
+            "caption": "Bailey with CatDad",
+            "date": "2020-11-20"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=6",
-            "full": "https://placekitten.com/800/600?random=6",
-            "caption": "Catnip Mouse Victory",
-            "date": "2024-11-15"
+            "thumb": "assets/img/cats/bailey/2020/20201124-205732-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201124-205732.jpg",
+            "caption": "You Can't See Me",
+            "date": "2020-11-24"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=7",
-            "full": "https://placekitten.com/800/600?random=7",
-            "caption": "Cozy Afternoon Nap",
-            "date": "2024-11-08"
+            "thumb": "assets/img/cats/bailey/2020/20201126-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201126.jpg",
+            "caption": "Total Relaxation",
+            "date": "2020-11-26"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=8",
-            "full": "https://placekitten.com/800/600?random=8",
-            "caption": "Adventure Planning Session",
-            "date": "2024-11-01"
+            "thumb": "assets/img/cats/bailey/2020/20201126-190058-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201126-190058.jpg",
+            "caption": "I Have No Spine",
+            "date": "2020-11-26"
+        },
+        {
+            "thumb": "assets/img/cats/bailey/2020/20201201-142036-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201201-142036.jpg",
+            "caption": "Look at Those Eyes",
+            "date": "2020-12-01"
+        },
+        {
+            "thumb": "assets/img/cats/bailey/2020/20201201-142831-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201201-142831.jpg",
+            "caption": "Waiting for Treats",
+            "date": "2020-12-01"
+        },
+        {
+            "thumb": "assets/img/cats/bailey/2020/20201213-211542-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201213-211542.jpg",
+            "caption": "My Turn to Watch TV",
+            "date": "2020-12-13"
+        },
+        {
+            "thumb": "assets/img/cats/bailey/2020/20201220-153644-thumb.webp",
+            "full": "assets/img/cats/bailey/2020/20201220-153644.jpg",
+            "caption": "Purrfect Christmas Decoration",
+            "date": "2020-12-20"
         }
     ]
 }

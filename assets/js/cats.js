@@ -64,12 +64,12 @@ function renderCatsGrid() {
             '<div class="cat-info">' +
             '<a href="cat-detail.html?name=' + catUrlName + '" class="cat-name-link">' +
             '<h3 class="cat-name">' + cat.name + '</h3>' +
-            '</a>' +
             '<p class="cat-birth-year">' + cat.birthYear + '</p>' +
             '<div class="cat-divider"></div>' +
             '<div class="cat-bio">' + cat.shortBio + '</div>' +
             '</div>' +
-            '</div>';
+            '</div>' +
+            '</a>';
 
         container.appendChild(col);
     });

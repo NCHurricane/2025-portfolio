@@ -6,52 +6,76 @@
     "cardThumbnail": "assets/img/cats/teddy/teddy-card.webp",
     "photos": [
         {
-            "thumb": "https://placekitten.com/300/200?random=21",
-            "full": "https://placekitten.com/800/600?random=21",
-            "caption": "Teddy's Therapeutic Purr Session",
-            "date": "2024-12-12"
+            "thumb": "assets/img/cats/teddy/2020/2020_1015-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/2020_1015.jpg",
+            "caption": "Teddy's First Photo",
+            "date": "2020-10-15"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=22",
-            "full": "https://placekitten.com/800/600?random=22",
-            "caption": "Master of the Head Bonk",
-            "date": "2024-12-07"
+            "thumb": "assets/img/cats/teddy/2020/20201101_164100-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201101_164100.jpg",
+            "caption": "The Balls Always Come Back",
+            "date": "2020-11-01"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=23",
-            "full": "https://placekitten.com/800/600?random=23",
-            "caption": "Windowsill Meditation",
-            "date": "2024-12-02"
+            "thumb": "assets/img/cats/teddy/2020/20201112_173228-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201112_173228.jpg",
+            "caption": "Why Is the Ground Shiny?",
+            "date": "2020-11-12"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=24",
-            "full": "https://placekitten.com/800/600?random=24",
-            "caption": "Blanket Fortress Builder",
-            "date": "2024-11-25"
+            "thumb": "assets/img/cats/teddy/2020/20201116_194611-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201116_194611.jpg",
+            "caption": "Nursing My Blanket",
+            "date": "2020-11-16"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=25",
-            "full": "https://placekitten.com/800/600?random=25",
-            "caption": "Spa Day Grooming",
-            "date": "2024-11-18"
+            "thumb": "assets/img/cats/teddy/2020/20201121_121343-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201121_121343.jpg",
+            "caption": "Cuddle Cup Closeup",
+            "date": "2020-11-21"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=26",
-            "full": "https://placekitten.com/800/600?random=26",
-            "caption": "Feather Toy Excitement",
-            "date": "2024-11-12"
+            "thumb": "assets/img/cats/teddy/2020/20201126_183558-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201126_183558.jpg",
+            "caption": "My Best 'Peanuts' Impression",
+            "date": "2020-11-26"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=27",
-            "full": "https://placekitten.com/800/600?random=27",
-            "caption": "Perfect Lap Position",
-            "date": "2024-11-05"
+            "thumb": "assets/img/cats/teddy/2020/20201127_210316-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201127_210316.jpg",
+            "caption": "It's Hard Being This Cute",
+            "date": "2020-11-27"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=28",
-            "full": "https://placekitten.com/800/600?random=28",
+            "thumb": "assets/img/cats/teddy/2020/20201129_100012-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201129_100012.jpg",
             "caption": "Peaceful Afternoon Rest",
-            "date": "2024-10-30"
+            "date": "2020-11-29"
+        },
+        {
+            "thumb": "assets/img/cats/teddy/2020/20201202_204713-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201202_204713.jpg",
+            "caption": "What Is He Dreaming About?",
+            "date": "2020-12-02"
+        },
+        {
+            "thumb": "assets/img/cats/teddy/2020/20201208_192347-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201208_192347.jpg",
+            "caption": "Watch My Toes Beans",
+            "date": "2020-12-08"
+        },
+        {
+            "thumb": "assets/img/cats/teddy/2020/20201213_095024-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201213_095024.jpg",
+            "caption": "Teddy and CatDad",
+            "date": "2020-12-13"
+        },
+        {
+            "thumb": "assets/img/cats/teddy/2020/20201230_095208-thumb.webp",
+            "full": "assets/img/cats/teddy/2020/20201230_095208.jpg",
+            "caption": "Look at this Face!",
+            "date": "2020-12-30"
         }
     ]
 }
