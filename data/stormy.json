@@ -6,52 +6,76 @@
     "cardThumbnail": "assets/img/cats/stormy/stormy-card.webp",
     "photos": [
         {
-            "thumb": "https://placekitten.com/300/200?random=41",
-            "full": "https://placekitten.com/800/600?random=41",
-            "caption": "The Judgmental Stare Master",
-            "date": "2024-12-14"
+            "thumb": "assets/img/cats/stormy/2025/20250130_175210-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250130_175210.jpg",
+            "caption": "Stormy's First Photo In Our Home",
+            "date": "2025-01-30"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=42",
-            "full": "https://placekitten.com/800/600?random=42",
-            "caption": "Household Supervisor on Duty",
-            "date": "2024-12-09"
+            "thumb": "assets/img/cats/stormy/2025/20250131_200237-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250131_200237.jpg",
+            "caption": "Could His Eyes Be Any Bigger?",
+            "date": "2025-01-31"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=43",
-            "full": "https://placekitten.com/800/600?random=43",
+            "thumb": "assets/img/cats/stormy/2025/20250202_113754-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250202_113754.jpg",
             "caption": "Quality Inspector Stormy",
-            "date": "2024-12-04"
+            "date": "2025-02-02"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=44",
-            "full": "https://placekitten.com/800/600?random=44",
-            "caption": "Claiming the Best Spot",
-            "date": "2024-11-27"
+            "thumb": "assets/img/cats/stormy/2025/20250217_165703-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250217_165703.jpg",
+            "caption": "Picking Up Habits from Bailey",
+            "date": "2025-02-17"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=45",
-            "full": "https://placekitten.com/800/600?random=45",
-            "caption": "Secret Cuddlebug Moment",
-            "date": "2024-11-22"
+            "thumb": "assets/img/cats/stormy/2025/20250219_190409-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250219_190409.jpg",
+            "caption": "His 'Cute, but Judgmental' Look",
+            "date": "2025-02-19"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=46",
-            "full": "https://placekitten.com/800/600?random=46",
-            "caption": "Warm Spot Thief",
-            "date": "2024-11-16"
+            "thumb": "assets/img/cats/stormy/2025/20250228_154149-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250228_154149.jpg",
+            "caption": "First Vet Trip with Meowmy",
+            "date": "2025-02-28"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=47",
-            "full": "https://placekitten.com/800/600?random=47",
-            "caption": "Queen of the Castle",
-            "date": "2024-11-10"
+            "thumb": "assets/img/cats/stormy/2025/20250309_215538-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250309_215538.jpg",
+            "caption": "Hand: Friend or Foe?",
+            "date": "2025-03-09"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=48",
-            "full": "https://placekitten.com/800/600?random=48",
-            "caption": "Late Night Snuggle Session",
-            "date": "2024-11-03"
+            "thumb": "assets/img/cats/stormy/2025/20250319_172728-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250319_172728.jpg",
+            "caption": "Fresh from the Container",
+            "date": "2025-03-19"
+        },
+        {
+            "thumb": "assets/img/cats/stormy/2025/20250405_173527-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250405_173527.jpg",
+            "caption": "Feeling Cute",
+            "date": "2025-04-05"
+        },
+        {
+            "thumb": "assets/img/cats/stormy/2025/20250429_005122-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250429_005122.jpg",
+            "caption": "Reclining in the Recliner",
+            "date": "2025-04-29"
+        },
+        {
+            "thumb": "assets/img/cats/stormy/2025/20250604_214302-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250604_214302.jpg",
+            "caption": "Just My Normal Pose",
+            "date": "2025-06-04"
+        },
+        {
+            "thumb": "assets/img/cats/stormy/2025/20250617_181349-thumb.webp",
+            "full": "assets/img/cats/stormy/2025/20250617_181349.jpg",
+            "caption": "Watching from My Secret Lair",
+            "date": "2025-06-17"
         }
     ]
 }

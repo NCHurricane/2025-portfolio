@@ -6,52 +6,100 @@
     "cardThumbnail": "assets/img/cats/bella-grace/bella-grace-card.webp",
     "photos": [
         {
-            "thumb": "https://placekitten.com/300/200?random=61",
-            "full": "https://placekitten.com/800/600?random=61",
-            "caption": "Tornado Bella in Action",
-            "date": "2024-12-13"
+            "thumb": "assets/img/cats/bella-grace/2025/20250201_211638-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250201_211638.jpg",
+            "caption": "Our First Photo of Bella Grace",
+            "date": "2025-02-01"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=62",
-            "full": "https://placekitten.com/800/600?random=62",
-            "caption": "Inconvenient Nap Spot Champion",
-            "date": "2024-12-08"
+            "thumb": "assets/img/cats/bella-grace/2025/20250208_160839-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250208_160839.jpg",
+            "caption": "Bella Grace and Meowmy",
+            "date": "2025-02-08"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=63",
-            "full": "https://placekitten.com/800/600?random=63",
-            "caption": "Professional Troublemaker",
-            "date": "2024-12-03"
+            "thumb": "assets/img/cats/bella-grace/2025/20250214_164913-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250214_164913.jpg",
+            "caption": "Bella Grace and CatDad",
+            "date": "2025-02-14"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=64",
-            "full": "https://placekitten.com/800/600?random=64",
-            "caption": "Instant Best Friend Mode",
-            "date": "2024-11-26"
+            "thumb": "assets/img/cats/bella-grace/2025/20250220_105835-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250220_105835.jpg",
+            "caption": "Her First Snow Day",
+            "date": "2025-02-20"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=65",
-            "full": "https://placekitten.com/800/600?random=65",
-            "caption": "Acrobatic Superstar",
-            "date": "2024-11-21"
+            "thumb": "assets/img/cats/bella-grace/2025/20250228_152418-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250228_152418.jpg",
+            "caption": "First Trip to the Vet",
+            "date": "2025-02-28"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=66",
-            "full": "https://placekitten.com/800/600?random=66",
-            "caption": "Interactive Toy Champion",
-            "date": "2024-11-14"
+            "thumb": "assets/img/cats/bella-grace/2025/20250302_135746-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250302_135746.jpg",
+            "caption": "Can I Help You, Ma'am?",
+            "date": "2025-03-02"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=67",
-            "full": "https://placekitten.com/800/600?random=67",
-            "caption": "Wrong Place, Right Time",
-            "date": "2024-11-07"
+            "thumb": "assets/img/cats/bella-grace/2025/20250302_142912-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250302_142912.jpg",
+            "caption": "Sleeping Princess",
+            "date": "2025-03-02"
         },
         {
-            "thumb": "https://placekitten.com/300/200?random=68",
-            "full": "https://placekitten.com/800/600?random=68",
-            "caption": "Boundless Curiosity",
-            "date": "2024-11-01"
+            "thumb": "assets/img/cats/bella-grace/2025/20250306_154419-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250306_154419.jpg",
+            "caption": "It Must Be Monday",
+            "date": "2025-03-06"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250309_141458-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250309_141458.jpg",
+            "caption": "Touch My Belly, If You Dare",
+            "date": "2025-03-09"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250309_214343-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250309_214343.jpg",
+            "caption": "Helping Design the New Logo",
+            "date": "2025-03-09"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250319_144420-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250319_144420.jpg",
+            "caption": "Could I Be Any Cuter?",
+            "date": "2025-03-19"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250412_091146-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250412_091146.jpg",
+            "caption": "On the Lookout for Brofurs",
+            "date": "2025-04-12"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250510_164820-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250510_164820.jpg",
+            "caption": "Was That a Treatie Bag?",
+            "date": "2025-05-10"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250522_195459-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250522_195459.jpg",
+            "caption": "A Girl and Her Flamingo",
+            "date": "2025-05-22"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250610_185506-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250610_185506.jpg",
+            "caption": "Now It's My Basket",
+            "date": "2025-06-10"
+        },
+        {
+            "thumb": "assets/img/cats/bella-grace/2025/20250622_163912-thumb.webp",
+            "full": "assets/img/cats/bella-grace/2025/20250622_163912.jpg",
+            "caption": "Resting for Future Sleeping",
+            "date": "2025-06-22"
         }
     ]
 }
