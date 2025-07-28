@@ -3,77 +3,77 @@
     "birthYear": "Born in 2020",
     "shortBio": "Bailey is one of two marbled tabby brothers adopted in 2020 with their sister, Bella. Bailey is a playful and mischievous boy who loves to hop around like a bunny and chitter at birds.",
     "bio": "Bailey is a playful and mischievous boy who loves to hop around like a bunny and chitter at birds. He can often be found in Meowmy's lap, purring and getting belly rubs. Nose touching is not allowed and will not rub his face against you, but he does love to bonk his head on you... and everything around him. Bailey is bonded to his brother, Teddy, and will lie with him in the window watching CatTV together. However, like all siblings, they have their battles - but minutes later, they are in a cuddle puddle together.",
-    "cardThumbnail": "assets/img/cats/bailey/bailey-card.webp",
+    "cardThumbnail": "../assets/img/cats/bailey/bailey-card.webp",
     "photos": [
         {
-            "thumb": "assets/img/cats/bailey/2020/20201004-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201004.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201004-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201004.jpg",
             "caption": "Bailey's First Photo",
             "date": "2020-10-04"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201101-david-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201101-david.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201101-david-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201101-david.jpg",
             "caption": "Who Are These Masked Humans?",
             "date": "2020-11-01"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201101-195501-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201101-195501.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201101-195501-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201101-195501.jpg",
             "caption": "Making Himself at Home",
             "date": "2020-11-01"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201105-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201105.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201105-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201105.jpg",
             "caption": "Figuring Out the Hammock",
             "date": "2020-11-05"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201120-195016-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201120-195016.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201120-195016-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201120-195016.jpg",
             "caption": "Bailey with CatDad",
             "date": "2020-11-20"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201124-205732-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201124-205732.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201124-205732-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201124-205732.jpg",
             "caption": "You Can't See Me",
             "date": "2020-11-24"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201126-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201126.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201126-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201126.jpg",
             "caption": "Total Relaxation",
             "date": "2020-11-26"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201126-190058-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201126-190058.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201126-190058-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201126-190058.jpg",
             "caption": "I Have No Spine",
             "date": "2020-11-26"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201201-142036-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201201-142036.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201201-142036-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201201-142036.jpg",
             "caption": "Look at Those Eyes",
             "date": "2020-12-01"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201201-142831-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201201-142831.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201201-142831-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201201-142831.jpg",
             "caption": "Waiting for Treats",
             "date": "2020-12-01"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201213-211542-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201213-211542.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201213-211542-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201213-211542.jpg",
             "caption": "My Turn to Watch TV",
             "date": "2020-12-13"
         },
         {
-            "thumb": "assets/img/cats/bailey/2020/20201220-153644-thumb.webp",
-            "full": "assets/img/cats/bailey/2020/20201220-153644.jpg",
+            "thumb": "../assets/img/cats/bailey/2020/20201220-153644-thumb.webp",
+            "full": "../assets/img/cats/bailey/2020/20201220-153644.jpg",
             "caption": "Purrfect Christmas Decoration",
             "date": "2020-12-20"
         }

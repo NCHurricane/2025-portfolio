@@ -5,7 +5,7 @@ var loadedCount = 0;
 
 function loadCatData() {
     catFiles.forEach(function (catName) {
-        fetch('data/' + catName + '.json')
+        fetch('../data/' + catName + '.json')
             .then(function (res) {
                 return res.json();
             })

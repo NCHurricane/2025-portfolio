@@ -3,77 +3,77 @@
     "birthYear": "Born in 2024",
     "shortBio": "Stormy is a foster-fail who melted our hearts with his big eyes and bigger heart. He loves ice cubes and anything with a string. He is not a fan of Bailey and Teddy, hopefully he will accept them one day.",
     "bio": "Stormy came to us as a foster, after being found wandering outdoors. From the start, he was very affectionate and playful. It was obvious that he was someone's cat, and had been abandoned. He loves to play with ice cubes and will chase them around the house, sliding them around of the floor. Stormy is not fond of Bailey and Teddy, but we are hopeful that with time, he will learn to accept them as part of his family. His favorite spot is looking out of the back window and the birds and bunnies.",
-    "cardThumbnail": "assets/img/cats/stormy/stormy-card.webp",
+    "cardThumbnail": "../assets/img/cats/stormy/stormy-card.webp",
     "photos": [
         {
-            "thumb": "assets/img/cats/stormy/2025/20250130_175210-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250130_175210.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250130_175210-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250130_175210.jpg",
             "caption": "Stormy's First Photo In Our Home",
             "date": "2025-01-30"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250131_200237-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250131_200237.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250131_200237-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250131_200237.jpg",
             "caption": "Could His Eyes Be Any Bigger?",
             "date": "2025-01-31"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250202_113754-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250202_113754.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250202_113754-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250202_113754.jpg",
             "caption": "Quality Inspector Stormy",
             "date": "2025-02-02"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250217_165703-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250217_165703.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250217_165703-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250217_165703.jpg",
             "caption": "Picking Up Habits from Bailey",
             "date": "2025-02-17"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250219_190409-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250219_190409.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250219_190409-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250219_190409.jpg",
             "caption": "His 'Cute, but Judgmental' Look",
             "date": "2025-02-19"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250228_154149-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250228_154149.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250228_154149-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250228_154149.jpg",
             "caption": "First Vet Trip with Meowmy",
             "date": "2025-02-28"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250309_215538-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250309_215538.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250309_215538-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250309_215538.jpg",
             "caption": "Hand: Friend or Foe?",
             "date": "2025-03-09"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250319_172728-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250319_172728.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250319_172728-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250319_172728.jpg",
             "caption": "Fresh from the Container",
             "date": "2025-03-19"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250405_173527-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250405_173527.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250405_173527-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250405_173527.jpg",
             "caption": "Feeling Cute",
             "date": "2025-04-05"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250429_005122-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250429_005122.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250429_005122-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250429_005122.jpg",
             "caption": "Reclining in the Recliner",
             "date": "2025-04-29"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250604_214302-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250604_214302.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250604_214302-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250604_214302.jpg",
             "caption": "Just My Normal Pose",
             "date": "2025-06-04"
         },
         {
-            "thumb": "assets/img/cats/stormy/2025/20250617_181349-thumb.webp",
-            "full": "assets/img/cats/stormy/2025/20250617_181349.jpg",
+            "thumb": "../assets/img/cats/stormy/2025/20250617_181349-thumb.webp",
+            "full": "../assets/img/cats/stormy/2025/20250617_181349.jpg",
             "caption": "Watching from My Secret Lair",
             "date": "2025-06-17"
         }

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Load the cat's data
-    fetch('data/' + catName + '.json')
+    fetch('../data/' + catName + '.json')
         .then(function (res) {
             if (!res.ok) {
                 throw new Error('Cat data not found');

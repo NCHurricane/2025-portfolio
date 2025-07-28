@@ -3,77 +3,77 @@
     "birthYear": "Born in 2020",
     "shortBio": "Teddy is one of two marbled tabby brothers adopted in 2020 with their sister, Bella. Teddy loves head rubs and ground beef, but if you visit, you will never see him. He is very, very shy.",
     "bio": "Teddy is a very timid but sweet big boy who loves to have his head scritched and belly rubs (with a time limit). He is not fond of strangers and will hide under the bed if you visit. His favorite game is Catch-The-Toy-Mouse and he loves to cuddle with his brother Bailey while watching CatTV. He was very bonded with his sister Bella, and seemed very sad when she crossed the Rainbow Bridge in 2024. He is now begrudgingly adjusting to her namesake, Bella Grace.",
-    "cardThumbnail": "assets/img/cats/teddy/teddy-card.webp",
+    "cardThumbnail": "../assets/img/cats/teddy/teddy-card.webp",
     "photos": [
         {
-            "thumb": "assets/img/cats/teddy/2020/2020_1015-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/2020_1015.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/2020_1015-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/2020_1015.jpg",
             "caption": "Teddy's First Photo",
             "date": "2020-10-15"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201101_164100-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201101_164100.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201101_164100-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201101_164100.jpg",
             "caption": "The Balls Always Come Back",
             "date": "2020-11-01"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201112_173228-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201112_173228.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201112_173228-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201112_173228.jpg",
             "caption": "Why Is the Ground Shiny?",
             "date": "2020-11-12"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201116_194611-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201116_194611.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201116_194611-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201116_194611.jpg",
             "caption": "Nursing My Blanket",
             "date": "2020-11-16"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201121_121343-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201121_121343.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201121_121343-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201121_121343.jpg",
             "caption": "Cuddle Cup Closeup",
             "date": "2020-11-21"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201126_183558-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201126_183558.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201126_183558-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201126_183558.jpg",
             "caption": "My Best 'Peanuts' Impression",
             "date": "2020-11-26"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201127_210316-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201127_210316.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201127_210316-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201127_210316.jpg",
             "caption": "It's Hard Being This Cute",
             "date": "2020-11-27"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201129_100012-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201129_100012.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201129_100012-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201129_100012.jpg",
             "caption": "Peaceful Afternoon Rest",
             "date": "2020-11-29"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201202_204713-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201202_204713.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201202_204713-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201202_204713.jpg",
             "caption": "What Is He Dreaming About?",
             "date": "2020-12-02"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201208_192347-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201208_192347.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201208_192347-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201208_192347.jpg",
             "caption": "Watch My Toes Beans",
             "date": "2020-12-08"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201213_095024-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201213_095024.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201213_095024-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201213_095024.jpg",
             "caption": "Teddy and CatDad",
             "date": "2020-12-13"
         },
         {
-            "thumb": "assets/img/cats/teddy/2020/20201230_095208-thumb.webp",
-            "full": "assets/img/cats/teddy/2020/20201230_095208.jpg",
+            "thumb": "../assets/img/cats/teddy/2020/20201230_095208-thumb.webp",
+            "full": "../assets/img/cats/teddy/2020/20201230_095208.jpg",
             "caption": "Look at this Face!",
             "date": "2020-12-30"
         }
