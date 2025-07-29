@@ -34,10 +34,7 @@ h2 {
     color: var(--primary-yellow);
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
-    /* Enhanced text shadow for better readability on all backgrounds */
-    text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.8),
-        0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 h3,
@@ -45,10 +42,7 @@ h4,
 h5 {
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
-    /* Add text shadow to smaller headings for consistency */
-    text-shadow:
-        0 1px 1px rgba(0, 0, 0, 0.6),
-        0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 hr {
@@ -326,9 +320,7 @@ section.video-hero {
     margin-bottom: 1rem;
     transition: all 0.3s ease;
     /* Enhanced text shadow for video background overlay */
-    text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.9),
-        0 2px 6px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .intro-gallery figure:hover figcaption {
@@ -1513,23 +1505,49 @@ section.video-cat {
 }
 
 .memorial-cat {
-    background: linear-gradient(45deg,
-            rgba(255, 0, 0, 0.4), rgba(255, 128, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(128, 255, 0, 0.4),
-            rgba(0, 255, 0, 0.4), rgba(0, 255, 128, 0.4), rgba(0, 255, 255, 0.4), rgba(0, 128, 255, 0.4),
-            rgba(0, 0, 255, 0.4), rgba(128, 0, 255, 0.4), rgba(255, 0, 255, 0.4), rgba(255, 0, 128, 0.4)) !important;
-    background-size: 100% 100% !important;
+    position: relative;
+    background: rgba(0, 0, 0, 0.7) !important;
+    /* Fallback only */
 }
 
-.memorial-cat:hover {
-    animation: rainbow-memorial 10s linear infinite;
-    background-size: 500% 500%;
-    filter: brightness(1.3);
+.memorial-cat::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg,
+            #ff0000, #ff8800, #ffff00, #00ff00,
+            #0088ff, #0000ff, #8800ff, #ff0000);
+    background-size: 200% 200%;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.memorial-cat:hover::before {
+    animation: rainbow-memorial 8s linear infinite;
+}
+
+/* Updated keyframes for smaller background-size */
+@keyframes rainbow-memorial {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .memorial-cat .cat-bio,
 .memorial-cat .cat-photo-count,
 .memorial-cat .cat-birth-year {
-    color: #e2e2e2;
+    color: #303030;
     /* text-shadow: 0 0 10px rgba(54, 54, 54, 0.728); */
 }
 
@@ -1715,39 +1733,36 @@ section.video-cat {
 
 /* Memorial cat special styling */
 .cat-detail-header.memorial .cat-detail-photo {
-    border: 8px solid transparent;
-    background: linear-gradient(45deg,
-            rgba(255, 0, 0, 0.8), rgba(255, 128, 0, 0.8), rgba(255, 255, 0, 0.8),
-            rgba(128, 255, 0, 0.8), rgba(0, 255, 0, 0.8), rgba(0, 255, 128, 0.8),
-            rgba(0, 255, 255, 0.8), rgba(0, 128, 255, 0.8), rgba(0, 0, 255, 0.8),
-            rgba(128, 0, 255, 0.8), rgba(255, 0, 255, 0.8), rgba(255, 0, 128, 0.8),
-            rgba(255, 0, 0, 0.8));
-    /* Repeat first color for seamless loop */
-    background-size: 600% 600%;
-    /* Larger size to prevent edge visibility */
-    animation: rainbow-border 12s ease-in-out infinite;
+    position: relative;
+    border: 8px solid #ffc107;
+    /* Fallback */
 }
 
-/* Updated keyframes with better positioning */
+.cat-detail-header.memorial .cat-detail-photo {
+    border: 8px solid transparent;
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(45deg,
+            #ff0000, #ff8000, #ffff00, #80ff00,
+            #00ff00, #00ff80, #00ffff, #0080ff,
+            #0000ff, #8000ff, #ff00ff, #ff0080,
+            #ff0000) border-box;
+    background-size: 200% 200%;
+    /* Much smaller */
+    animation: rainbow-border 8s linear infinite;
+}
+
 @keyframes rainbow-border {
     0% {
-        background-position: 5% 50%;
-    }
-
-    25% {
-        background-position: 100% 25%;
+        background-position: 0% 50%;
     }
 
     50% {
-        background-position: 200% 50%;
-    }
-
-    75% {
-        background-position: 100% 75%;
+        background-position: 100% 50%;
     }
 
     100% {
-        background-position: 5% 50%;
+        background-position: 0% 50%;
     }
 }
 
@@ -2155,52 +2170,7 @@ footer .fa-brands {
     --fa-fade-opacity: 0.5;
 }
 
-/* ============================ */
-/* Text Shadow Enhancements     */
-/* ============================ */
 
-/* Ensure text shadows work well on various backgrounds */
-@supports (text-shadow: 0 0 0 transparent) {
-
-    /* All headings get enhanced shadows for cross-background compatibility */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        /* Multi-layer shadow for maximum readability */
-        text-shadow:
-            0 1px 1px rgba(0, 0, 0, 0.8),
-            0 2px 2px rgba(0, 0, 0, 0.4),
-            0 1px 0px rgba(0, 0, 0, 1);
-    }
-
-    /* Stronger shadows for large headings on video backgrounds */
-    .video-hero h1,
-    .intro-gallery figcaption {
-        text-shadow:
-            0 2px 4px rgba(0, 0, 0, 0.9),
-            0 4px 8px rgba(0, 0, 0, 0.5),
-            0 1px 0px rgba(0, 0, 0, 1);
-    }
-}
-
-/* Fallback for browsers without text-shadow support (extremely rare) */
-@supports not (text-shadow: 0 0 0 transparent) {
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        /* Add a subtle background for contrast as fallback */
-        background: rgba(0, 0, 0, 0.1);
-        padding: 0.1em 0.2em;
-        border-radius: 2px;
-    }
-}
 
 /* ============================ */
 /* Skip Navigation & Enhanced Focus Management */
@@ -2421,20 +2391,6 @@ select:focus-visible {
     outline-offset: 2px;
 }
 
-/* Browser Support Fallback */
-@supports not selector(:focus-visible) {
-
-    /* Fallback for browsers that don't support :focus-visible */
-    /* This will show focus for all interactions in older browsers */
-    a:focus,
-    button:focus,
-    input:focus,
-    .nav-link:focus {
-        outline: 2px solid var(--primary-yellow);
-        outline-offset: 2px;
-        border-radius: 2px;
-    }
-}
 
 /* ============================ */
 /* Back to Top Button ++++++++ */

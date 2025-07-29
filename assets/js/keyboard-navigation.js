@@ -1,12 +1,22 @@
 // Enhanced Keyboard Navigation for Chuck Copeland Portfolio
 // Provides essential accessibility features for keyboard users
+// Enhanced with namespaced IIFE pattern to prevent global pollution
 
 (function () {
     'use strict';
 
-    // Focus Management for Lightbox/Modal
+    // ============================================================================
+    // LOCAL SCOPE - All variables and functions are now contained
+    // ============================================================================
+
+    // Local variables (no longer global)
     var focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     var previouslyFocusedElement;
+    var isInitialized = false;
+
+    // ============================================================================
+    // LOCAL FUNCTIONS - All keyboard navigation functionality
+    // ============================================================================
 
     // Skip Navigation Enhancement
     function initSkipNavigation() {
@@ -375,8 +385,18 @@
         });
     }
 
+    // ============================================================================
+    // INITIALIZATION FUNCTION
+    // ============================================================================
+
     // Initialize all keyboard navigation features
     function init() {
+        // Prevent double initialization
+        if (isInitialized) {
+            console.warn('Keyboard navigation already initialized');
+            return;
+        }
+
         // Wait for DOM to be ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
@@ -394,10 +414,55 @@
         initGlobalKeyboardHandlers();
         addKeyboardHints();
 
+        isInitialized = true;
         console.log('Enhanced keyboard navigation initialized');
     }
 
-    // Start initialization
+    // ============================================================================
+    // MAIN EXECUTION
+    // ============================================================================
+
+    // Start initialization immediately
     init();
 
-})();
+    // ============================================================================
+    // PUBLIC API - Expose essential functionality for other scripts
+    // ============================================================================
+
+    // Create namespace if it doesn't exist
+    window.ChuckPortfolio = window.ChuckPortfolio || {};
+
+    // Expose keyboard navigation functionality
+    window.ChuckPortfolio.keyboardNavigation = {
+        // Allow manual re-initialization (useful for dynamic content)
+        reinitialize: function () {
+            console.log('Re-initializing keyboard navigation for dynamic content');
+            initVideoKeyboardControls();
+            initCustomVideoControlsKeyboard();
+            initPlayButtonKeyboard();
+            initGalleryKeyboardNavigation();
+            initSocialIconsKeyboard();
+            addKeyboardHints();
+        },
+
+        // Allow other scripts to check if initialized
+        isInitialized: function () {
+            return isInitialized;
+        },
+
+        // Allow other scripts to manually trap focus (useful for custom modals)
+        trapFocus: function (element) {
+            if (element) {
+                trapFocus(element);
+            }
+        },
+
+        // Allow other scripts to access focusable elements selector
+        getFocusableSelector: function () {
+            return focusableElementsSelector;
+        },
+
+        version: '1.0.0'
+    };
+
+})(); // IIFE ends here - everything above is now in local scope
