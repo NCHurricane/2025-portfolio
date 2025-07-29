@@ -33,6 +33,17 @@ function renderCatDetail(catData) {
     document.getElementById('catName').textContent = catData.name;
     document.getElementById('catBio').textContent = catData.bio;
 
+    // Add the cat photo
+    var catPhoto = document.getElementById('catPhoto');
+    catPhoto.src = catData.cardThumbnail;
+    catPhoto.alt = catData.name;
+
+    // Add memorial styling if applicable
+    var headerContainer = document.getElementById('catDetailHeader');
+    if (catData.memorial === "true") {
+        headerContainer.classList.add('memorial');
+    }
+
     // Render photo gallery with year grouping
     renderPhotoGallery(catData.photos, catData.name);
 }
