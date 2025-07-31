@@ -600,5 +600,157 @@
     }
   };
 
+  Lightbox.prototype.cleanup = function () {
+    var self = this;
+
+    // Remove all event listeners
+    if (this.$overlay) {
+      this.$overlay.off();
+    }
+
+    if (this.$lightbox) {
+      this.$lightbox.off();
+    }
+
+    if (this.$outerContainer) {
+      this.$outerContainer.off();
+    }
+
+    if (this.$nav) {
+      this.$nav.off();
+    }
+
+    // Remove window resize listener
+    $(window).off('resize', $.proxy(this.sizeOverlay, this));
+
+    // Clear any timers or intervals
+    if (this.resizeTimer) {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = null;
+    }
+
+    if (this.imageLoadTimeout) {
+      clearTimeout(this.imageLoadTimeout);
+      this.imageLoadTimeout = null;
+    }
+
+    // Reset album and state
+    this.album = [];
+    this.currentImageIndex = void 0;
+
+    // Remove lightbox DOM elements if they exist
+    $('#lightbox').remove();
+    $('#lightboxOverlay').remove();
+
+    console.log('Lightbox cleaned up');
+  };
+
+  // Enhanced end method that calls cleanup - INSIDE the factory function
+  var originalEnd = Lightbox.prototype.end;
+  Lightbox.prototype.end = function () {
+    originalEnd.call(this);
+
+    // Additional cleanup for memory management
+    if (this.$lightbox) {
+      this.$lightbox.find('img').attr('src', ''); // Clear image sources
+    }
+
+    // Clear any cached jQuery objects
+    this.$lightbox = null;
+    this.$overlay = null;
+    this.$outerContainer = null;
+    this.$container = null;
+    this.$image = null;
+    this.$nav = null;
+  };
+
+  // Memory leak prevention for image loading - INSIDE the factory function
+  var originalChangeImage = Lightbox.prototype.changeImage;
+  Lightbox.prototype.changeImage = function (imageNumber) {
+    var self = this;
+
+    // Clear previous image to free memory
+    if (this.$image) {
+      this.$image.attr('src', '');
+    }
+
+    // Call original method with proper context
+    originalChangeImage.call(this, imageNumber);
+
+    // Add timeout to prevent memory buildup during rapid navigation
+    if (this.imageLoadTimeout) {
+      clearTimeout(this.imageLoadTimeout);
+    }
+
+    this.imageLoadTimeout = setTimeout(function () {
+      self.imageLoadTimeout = null;
+    }, 100);
+  };
+
   return new Lightbox();
 }));
+
+window.ChuckPortfolio = window.ChuckPortfolio || {};
+window.ChuckPortfolio.lightbox = {
+  // Force cleanup method
+  cleanup: function () {
+    if (typeof lightbox !== 'undefined' && lightbox.cleanup) {
+      lightbox.cleanup();
+    }
+
+    // Fallback cleanup if lightbox instance doesn't have cleanup method
+    $('#lightbox').remove();
+    $('#lightboxOverlay').remove();
+
+    // Remove any remaining lightbox event listeners from document
+    $(document).off('.lightbox');
+    $(window).off('.lightbox');
+
+    // Clear body classes
+    $('body').removeClass('lb-disable-scrolling');
+  },
+
+  // Check if lightbox is active
+  isActive: function () {
+    return $('#lightbox').is(':visible');
+  },
+
+  // Force close lightbox
+  forceClose: function () {
+    if (this.isActive()) {
+      if (typeof lightbox !== 'undefined') {
+        lightbox.end();
+      }
+      this.cleanup();
+    }
+  },
+
+  version: '1.0.0'
+};
+
+// Auto-cleanup on page navigation - OUTSIDE factory function
+$(window).on('beforeunload pagehide', function () {
+  if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+    window.ChuckPortfolio.lightbox.cleanup();
+  }
+});
+
+// Auto-cleanup on hash change - OUTSIDE factory function
+$(window).on('hashchange', function () {
+  if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox && window.ChuckPortfolio.lightbox.isActive()) {
+    window.ChuckPortfolio.lightbox.forceClose();
+  }
+});
+
+// Enhanced keyboard handling with proper cleanup - OUTSIDE factory function
+$(document).on('keydown.lightbox', function (e) {
+  if (e.keyCode === 27 && $('#lightbox').is(':visible')) { // ESC key
+    e.preventDefault();
+    e.stopPropagation();
+    if (typeof lightbox !== 'undefined') {
+      lightbox.end();
+    }
+  }
+});
+
+

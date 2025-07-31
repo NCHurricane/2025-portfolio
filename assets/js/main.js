@@ -68,6 +68,11 @@
             window.removeEventListener('scroll', throttledScrollHandler);
         }
 
+        // Add lightbox cleanup
+        if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+            window.ChuckPortfolio.lightbox.cleanup();
+        }
+
         scrollIndicator = null;
         portfolioSection = null;
         throttledScrollHandler = null;

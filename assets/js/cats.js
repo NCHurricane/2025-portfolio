@@ -6,6 +6,17 @@
     var catsData = [];
     var loadedCount = 0;
 
+    // DOM Cache
+    var cachedContainer = null;
+
+    // Get cached container with safety checks
+    function getContainer() {
+        if (!cachedContainer || !cachedContainer.parentNode) {
+            cachedContainer = document.getElementById('catsGrid');
+        }
+        return cachedContainer;
+    }
+
     function loadCatData() {
         catFiles.forEach(function (catName) {
             fetch('../data/' + catName + '.json')
@@ -24,7 +35,7 @@
                     console.error('Failed to load ' + catName + ' data:', err);
                     loadedCount++;
 
-                    var container = document.getElementById('catsGrid');
+                    var container = getContainer();
                     if (container && loadedCount === 1) {
                         var errorDiv = document.createElement('div');
                         errorDiv.className = 'col-12 text-center mb-3';
@@ -40,7 +51,7 @@
     }
 
     function renderCatsGrid() {
-        var container = document.getElementById('catsGrid');
+        var container = getContainer();
 
         if (catsData.length === 0) {
             container.innerHTML = '<div class="col-12 text-center"><p class="text-danger">Unable to load cat information.</p></div>';
@@ -82,7 +93,7 @@
     }
 
     function displayCatsError(message) {
-        var container = document.getElementById('catsGrid');
+        var container = getContainer();
         container.innerHTML =
             '<div class="col-12 text-center">' +
             '<div class="alert alert-warning" role="alert">' +
@@ -113,7 +124,7 @@
     }
 
     function loadCatDataWithErrorHandling() {
-        var container = document.getElementById('catsGrid');
+        var container = getContainer();
 
         container.innerHTML =
             '<div class="col-12 text-center">' +
@@ -161,7 +172,7 @@
 
     // Initialize when page loads
     document.addEventListener('DOMContentLoaded', function () {
-        var container = document.getElementById('catsGrid');
+        var container = getContainer();
         if (container) {
             loadCatDataWithErrorHandling();
         }
@@ -171,7 +182,8 @@
     window.ChuckPortfolio = window.ChuckPortfolio || {};
     window.ChuckPortfolio.cats = {
         reload: function () {
-            if (document.getElementById('catsGrid')) {
+            var container = getContainer();
+            if (container) {
                 loadCatDataWithErrorHandling();
             }
         },
@@ -185,3 +197,15 @@
     };
 
 })();
+
+window.addEventListener('beforeunload', function () {
+    if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+        window.ChuckPortfolio.lightbox.cleanup();
+    }
+});
+
+window.addEventListener('pagehide', function () {
+    if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+        window.ChuckPortfolio.lightbox.cleanup();
+    }
+});

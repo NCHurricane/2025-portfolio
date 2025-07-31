@@ -72,12 +72,18 @@
             window.removeEventListener('scroll', throttledScrollHandler);
         }
 
+        // Add lightbox cleanup
+        if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+            window.ChuckPortfolio.lightbox.cleanup();
+        }
+
         backToTopBtn = null;
         throttledScrollHandler = null;
         isInitialized = false;
 
         console.log('Back-to-top functionality cleaned up');
     }
+
 
     function init() {
         if (isInitialized) {

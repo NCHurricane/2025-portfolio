@@ -59,11 +59,22 @@
 
     cleanup: function () {
       this.listeners.forEach(function (listener) {
-        listener.element.removeEventListener(listener.event, listener.handler, listener.options);
+        try {
+          if (listener.element) {
+            if (listener.element.isConnected !== false) {
+              listener.element.removeEventListener(listener.event, listener.handler, listener.options);
+            } else {
+              listener.element.removeEventListener(listener.event, listener.handler, listener.options);
+            }
+          }
+        } catch (error) {
+          console.warn('Event listener cleanup warning (non-critical):', error.message);
+        }
       });
-      this.listeners = [];
+
+      this.listeners.length = 0;
       console.log('Video event listeners cleaned up');
-    }
+    },
   };
 
   function setupPlayButtonOverlay(video) {
@@ -108,6 +119,10 @@
 
   function setupCustomControls(video) {
     var wrapper = video.closest('.video-wrapper');
+    if (!wrapper) {
+      console.warn('Video wrapper not found, skipping custom controls');
+      return;
+    }
     var controls = wrapper.querySelector('.custom-video-controls');
     var playPauseBtn = controls.querySelector('.play-pause-btn');
     var muteBtn = controls.querySelector('.mute-btn');
@@ -298,16 +313,41 @@
   function setupPageCleanup() {
     function handleBeforeUnload() {
       videoEventRegistry.cleanup();
+
+      // Add lightbox cleanup
+      if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+        window.ChuckPortfolio.lightbox.cleanup();
+      }
+
+      // Additional cleanup for any remaining video elements
+      var remainingVideos = document.querySelectorAll('video');
+      remainingVideos.forEach(function (video) {
+        video.pause();
+        video.src = '';
+        video.load();
+      });
+
+      // Clear any remaining timeouts/intervals
+      var highestTimeoutId = setTimeout(function () { }, 0);
+      for (var i = 0; i < highestTimeoutId; i++) {
+        clearTimeout(i);
+      }
     }
 
     function handlePageHide() {
       videoEventRegistry.cleanup();
+
+      // Add lightbox cleanup
+      if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+        window.ChuckPortfolio.lightbox.cleanup();
+      }
     }
 
+    // More aggressive cleanup triggers
     window.addEventListener('beforeunload', handleBeforeUnload);
     window.addEventListener('pagehide', handlePageHide);
-
     window.addEventListener('popstate', handleBeforeUnload);
+    window.addEventListener('hashchange', handleBeforeUnload);
   }
 
 

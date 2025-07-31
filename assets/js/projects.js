@@ -1,9 +1,20 @@
-// Video projects functionality
+// Video projects functionality - OPTIMIZED VERSION
 (function () {
   'use strict';
 
   var projectsData = [];
   var isLoaded = false;
+
+  // DOM Cache
+  var cachedContainer = null;
+
+  // Get cached container with safety checks
+  function getContainer() {
+    if (!cachedContainer || !cachedContainer.parentNode) {
+      cachedContainer = document.getElementById("project-grid");
+    }
+    return cachedContainer;
+  }
 
   function renderProjectsGrid(projects, container) {
     container.innerHTML = '';
@@ -29,7 +40,7 @@
   }
 
   function loadProjects() {
-    var container = document.getElementById("project-grid");
+    var container = getContainer();
 
     if (!container) {
       console.warn('Projects container not found - projects.js may be loaded on wrong page');
@@ -113,3 +124,15 @@
   };
 
 })();
+
+window.addEventListener('beforeunload', function () {
+  if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+    window.ChuckPortfolio.lightbox.cleanup();
+  }
+});
+
+window.addEventListener('pagehide', function () {
+  if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+    window.ChuckPortfolio.lightbox.cleanup();
+  }
+});

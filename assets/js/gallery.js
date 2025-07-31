@@ -1,6 +1,17 @@
-// Photo gallery functionality
+// Photo gallery functionality - OPTIMIZED VERSION
 (function () {
   'use strict';
+
+  // DOM Cache
+  var cachedContainer = null;
+
+  // Get cached container with safety checks
+  function getContainer() {
+    if (!cachedContainer || !cachedContainer.parentNode) {
+      cachedContainer = document.getElementById("galleryGrid");
+    }
+    return cachedContainer;
+  }
 
   function displayGalleryError(container, message, showRetry) {
     showRetry = showRetry !== false;
@@ -73,7 +84,7 @@
   }
 
   // Main gallery loading
-  var galleryContainer = document.getElementById("galleryGrid");
+  var galleryContainer = getContainer();
 
   if (galleryContainer) {
     galleryContainer.innerHTML = `
@@ -92,7 +103,8 @@
         return response.json();
       })
       .then(function (images) {
-        galleryContainer.innerHTML = '';
+        var container = getContainer(); // Re-get container for safety
+        container.innerHTML = '';
 
         try {
           var validImages = validateImageData(images);
@@ -100,20 +112,20 @@
           validImages.forEach(function (img) {
             try {
               var galleryItem = createGalleryItem(img);
-              galleryContainer.appendChild(galleryItem);
+              container.appendChild(galleryItem);
             } catch (itemError) {
               console.warn('Skipping invalid gallery item:', img, itemError);
             }
           });
 
-          if (galleryContainer.children.length === 0) {
+          if (container.children.length === 0) {
             throw new Error('No gallery items could be created');
           }
 
         } catch (validationError) {
           console.error("Gallery validation error:", validationError);
           displayGalleryError(
-            galleryContainer,
+            container,
             "There was a problem processing the gallery data. The images may be in an unexpected format."
           );
         }
@@ -121,6 +133,7 @@
       .catch(function (err) {
         console.error("Failed to load gallery:", err);
 
+        var container = getContainer(); // Re-get container for error display
         var errorMessage;
         if (err.name === 'TypeError' && err.message.includes('fetch')) {
           errorMessage = "Unable to connect to the server. Please check your internet connection.";
@@ -132,7 +145,7 @@
           errorMessage = "Unable to load photo gallery. Please try refreshing the page.";
         }
 
-        displayGalleryError(galleryContainer, errorMessage);
+        displayGalleryError(container, errorMessage);
       });
   }
 
@@ -143,3 +156,15 @@
   };
 
 })();
+
+window.addEventListener('beforeunload', function () {
+  if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+    window.ChuckPortfolio.lightbox.cleanup();
+  }
+});
+
+window.addEventListener('pagehide', function () {
+  if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+    window.ChuckPortfolio.lightbox.cleanup();
+  }
+});

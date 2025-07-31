@@ -282,7 +282,19 @@
             });
         },
 
+        cleanup: function () {
+            if (window.ChuckPortfolio && window.ChuckPortfolio.lightbox) {
+                window.ChuckPortfolio.lightbox.cleanup();
+            }
+        },
+
         version: '1.0.0'
-    };
+    };;
+
+    window.addEventListener('beforeunload', function () {
+        if (window.ChuckPortfolio && window.ChuckPortfolio.catDetail) {
+            window.ChuckPortfolio.catDetail.cleanup();
+        }
+    });
 
 })(); // IIFE ends here - everything above is now in local scope
