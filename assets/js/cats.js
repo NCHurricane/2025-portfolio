@@ -1,18 +1,11 @@
-// Enhanced cats.js with namespaced IIFE pattern to prevent global pollution
-
+// Cats gallery functionality
 (function () {
     'use strict';
 
-    // ============================================================================
-    // LOCAL SCOPE - All variables and functions are now contained
-    // ============================================================================
-
-    // Local variables (no longer global)
     var catFiles = ['bailey', 'teddy', 'stormy', 'bella-grace', 'bella'];
     var catsData = [];
     var loadedCount = 0;
 
-    // Local functions (no longer global)
     function loadCatData() {
         catFiles.forEach(function (catName) {
             fetch('../data/' + catName + '.json')
@@ -23,7 +16,6 @@
                     catsData.push(catData);
                     loadedCount++;
 
-                    // Once all cats are loaded, render the grid
                     if (loadedCount === catFiles.length) {
                         renderCatsGrid();
                     }
@@ -32,17 +24,14 @@
                     console.error('Failed to load ' + catName + ' data:', err);
                     loadedCount++;
 
-                    // Show user feedback for failed cat
                     var container = document.getElementById('catsGrid');
                     if (container && loadedCount === 1) {
-                        // Only show error on first failure, not for each cat
                         var errorDiv = document.createElement('div');
                         errorDiv.className = 'col-12 text-center mb-3';
                         errorDiv.innerHTML = '<p class="text-warning"><i class="fas fa-exclamation-triangle"></i> Some cat information could not be loaded.</p>';
                         container.appendChild(errorDiv);
                     }
 
-                    // Still check if we should render with partial data
                     if (loadedCount === catFiles.length) {
                         renderCatsGrid();
                     }
@@ -58,10 +47,8 @@
             return;
         }
 
-        // Clear loading state
         container.innerHTML = '';
 
-        // Sort cats by name for consistent display
         var displayOrder = ['Bailey', 'Teddy', 'Stormy', 'Bella Grace', 'Bella'];
         catsData.sort(function (a, b) {
             return displayOrder.indexOf(a.name) - displayOrder.indexOf(b.name);
@@ -71,7 +58,6 @@
             var col = document.createElement('div');
             col.className = 'col-md-6 mb-4';
 
-            // Generate the URL-safe cat name
             var catUrlName = cat.name.toLowerCase().replace(/\s+/g, '-');
 
             col.innerHTML =
@@ -95,7 +81,6 @@
         });
     }
 
-    // Helper function for error handling (local)
     function displayCatsError(message) {
         var container = document.getElementById('catsGrid');
         container.innerHTML =
@@ -110,7 +95,6 @@
             '</div>';
     }
 
-    // Enhanced error handling function (local)
     function handleCatLoadingError(error) {
         console.error('Cat loading error:', error);
 
@@ -128,11 +112,9 @@
         displayCatsError(errorMessage);
     }
 
-    // Enhanced loading function with better error handling
     function loadCatDataWithErrorHandling() {
         var container = document.getElementById('catsGrid');
 
-        // Show loading state
         container.innerHTML =
             '<div class="col-12 text-center">' +
             '<div class="loading-cats">' +
@@ -141,7 +123,6 @@
             '</div>' +
             '</div>';
 
-        // Reset counters
         catsData = [];
         loadedCount = 0;
 
@@ -154,7 +135,6 @@
                     return res.json();
                 })
                 .then(function (catData) {
-                    // Validate basic cat data structure
                     if (!catData.name || !catData.cardThumbnail) {
                         throw new Error('Invalid cat data structure for ' + catName);
                     }
@@ -162,14 +142,12 @@
                 })
                 .catch(function (err) {
                     console.warn('Failed to load ' + catName + ':', err);
-                    return null; // Return null for failed loads
+                    return null;
                 });
         });
 
-        // Wait for all promises to complete
         Promise.all(loadPromises)
             .then(function (results) {
-                // Filter out null results (failed loads)
                 catsData = results.filter(function (cat) { return cat !== null; });
 
                 if (catsData.length === 0) {
@@ -181,47 +159,29 @@
             .catch(handleCatLoadingError);
     }
 
-    // ============================================================================
-    // INITIALIZATION (same trigger, enhanced execution)
-    // ============================================================================
-
     // Initialize when page loads
     document.addEventListener('DOMContentLoaded', function () {
-        // Check if we're on the cats page
         var container = document.getElementById('catsGrid');
         if (container) {
             loadCatDataWithErrorHandling();
         }
     });
 
-    // ============================================================================
-    // OPTIONAL: EXPOSE PUBLIC API (only if needed by other scripts)
-    // ============================================================================
-
-    // Create namespace if it doesn't exist
+    // Public API
     window.ChuckPortfolio = window.ChuckPortfolio || {};
-
-    // Expose only essential functionality that other scripts might need
     window.ChuckPortfolio.cats = {
-        // Example: if other scripts needed to trigger reload
         reload: function () {
             if (document.getElementById('catsGrid')) {
                 loadCatDataWithErrorHandling();
             }
         },
-
-        // Example: if other scripts needed to check loading state
         getCatsData: function () {
-            // Return copy to prevent external modification
             return catsData.slice();
         },
-
-        // Example: if other scripts needed to check if cats are loaded
         isLoaded: function () {
             return loadedCount === catFiles.length && catsData.length > 0;
         },
-
         version: '1.0.0'
     };
 
-})(); // IIFE ends here - everything above is now in local scope
+})();

@@ -1,19 +1,10 @@
-// ============================================================================
-// PROJECT DETAIL - Enhanced with namespaced IIFE pattern
-// ============================================================================
+// Video project-detail functionality
+
 
 (function () {
   'use strict';
 
-  // ============================================================================
-  // LOCAL SCOPE - All variables and functions are now contained
-  // ============================================================================
 
-  // ============================================================================
-  // UTILITY FUNCTIONS - Define once at the top (now local)
-  // ============================================================================
-
-  // URL sanitization function
   function sanitizeProjectId(id) {
     if (!id) return null;
     var sanitized = id.replace(/[^a-zA-Z0-9\-_]/g, '');
@@ -23,7 +14,6 @@
     return sanitized.length > 0 ? sanitized : null;
   }
 
-  // Helper function to hide loading state
   function hideLoading() {
     var loadingElement = document.querySelector('.video-loading');
     if (loadingElement) {
@@ -31,13 +21,11 @@
     }
   }
 
-  // Helper function to generate poster image path from video URL
   function generatePosterPath(videoUrl) {
     var videoName = videoUrl.split('/').pop().replace(/\.(mp4|webm|ogg)$/i, '');
     return `assets/video/gallery/thumbs/${videoName}.webp`;
   }
 
-  // Helper function to determine video type
   function getVideoType(videoUrl) {
     if (videoUrl.includes('youtube') || videoUrl.includes('youtu.be')) {
       return 'YouTube Video';
@@ -50,22 +38,15 @@
     }
   }
 
-  // Format time helper
   function formatTime(seconds) {
     var mins = Math.floor(seconds / 60);
     var secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   }
 
-  // ============================================================================
-  // VIDEO CONTROL FUNCTIONS (now local)
-  // ============================================================================
-
-  // Local cleanup registry to track all event listeners
   var videoEventRegistry = {
     listeners: [],
 
-    // Add a listener to the registry
     add: function (element, event, handler, options) {
       element.addEventListener(event, handler, options);
       this.listeners.push({
@@ -76,7 +57,6 @@
       });
     },
 
-    // Remove all registered listeners
     cleanup: function () {
       this.listeners.forEach(function (listener) {
         listener.element.removeEventListener(listener.event, listener.handler, listener.options);
@@ -86,7 +66,6 @@
     }
   };
 
-  // Setup custom play button overlay for better UX
   function setupPlayButtonOverlay(video) {
     var wrapper = video.closest('.video-wrapper');
 
@@ -100,7 +79,6 @@
 
     wrapper.appendChild(playOverlay);
 
-    // Use registry for all event listeners
     videoEventRegistry.add(video, 'play', function () {
       playOverlay.style.opacity = '0';
       playOverlay.style.pointerEvents = 'none';
@@ -128,7 +106,6 @@
     });
   }
 
-  // Setup custom video controls
   function setupCustomControls(video) {
     var wrapper = video.closest('.video-wrapper');
     var controls = wrapper.querySelector('.custom-video-controls');
@@ -143,7 +120,6 @@
 
     var videoControlsTimeout;
 
-    // Mouse movement handling with cleanup
     function handleMouseMove() {
       controls.style.opacity = '1';
       clearTimeout(videoControlsTimeout);
@@ -163,7 +139,6 @@
     videoEventRegistry.add(wrapper, 'mousemove', handleMouseMove);
     videoEventRegistry.add(wrapper, 'mouseleave', handleMouseLeave);
 
-    // Play/Pause functionality
     function handlePlayPause() {
       if (video.paused) {
         video.play();
@@ -185,7 +160,6 @@
     videoEventRegistry.add(video, 'play', handlePlay);
     videoEventRegistry.add(video, 'pause', handlePause);
 
-    // Mute functionality
     function updateMuteButton() {
       var icon = muteBtn.querySelector('i');
       if (video.muted || video.volume === 0) {
@@ -204,7 +178,6 @@
 
     videoEventRegistry.add(muteBtn, 'click', handleMute);
 
-    // Volume control
     function handleVolumeChange() {
       video.volume = this.value;
       video.muted = false;
@@ -213,7 +186,6 @@
 
     videoEventRegistry.add(volumeSlider, 'input', handleVolumeChange);
 
-    // Progress bar functionality
     function handleTimeUpdate() {
       var percent = (video.currentTime / video.duration) * 100;
       progressFilled.style.width = percent + '%';
@@ -234,7 +206,6 @@
     videoEventRegistry.add(video, 'loadedmetadata', handleLoadedMetadata);
     videoEventRegistry.add(progressBar, 'click', handleProgressClick);
 
-    // Fullscreen functionality
     function handleFullscreen() {
       if (video.requestFullscreen) {
         video.requestFullscreen();
@@ -247,7 +218,6 @@
 
     videoEventRegistry.add(fullscreenBtn, 'click', handleFullscreen);
 
-    // Context menu prevention
     function handleContextMenu(e) {
       e.preventDefault();
     }
@@ -255,7 +225,6 @@
     videoEventRegistry.add(video, 'contextmenu', handleContextMenu);
   }
 
-  // Setup event listeners for self-hosted videos
   function setupVideoEventListeners(video) {
     function handleLoadStart() {
       console.log('Video loading started');
@@ -318,7 +287,6 @@
       }
     }
 
-    // Register all event listeners
     videoEventRegistry.add(video, 'loadstart', handleLoadStart);
     videoEventRegistry.add(video, 'loadedmetadata', handleLoadedMetadata);
     videoEventRegistry.add(video, 'canplay', handleCanPlay);
@@ -326,11 +294,7 @@
     videoEventRegistry.add(video, 'keydown', handleKeydown);
   }
 
-  // ============================================================================
-  // PAGE CLEANUP SYSTEM (now local)
-  // ============================================================================
 
-  // Cleanup when page is about to unload
   function setupPageCleanup() {
     function handleBeforeUnload() {
       videoEventRegistry.cleanup();
@@ -340,17 +304,13 @@
       videoEventRegistry.cleanup();
     }
 
-    // Handle page navigation/refresh
     window.addEventListener('beforeunload', handleBeforeUnload);
     window.addEventListener('pagehide', handlePageHide);
 
-    // Handle browser back button (for single-page app behavior)
     window.addEventListener('popstate', handleBeforeUnload);
   }
 
-  // ============================================================================
-  // MAIN EXECUTION (same logic, now in local scope)
-  // ============================================================================
+
 
   var container = document.getElementById("projectDetail");
 
@@ -358,11 +318,9 @@
     fetch("data/projects.json")
       .then(function (res) { return res.json(); })
       .then(function (projects) {
-        // Get and sanitize the project ID
         var rawId = new URLSearchParams(window.location.search).get("id");
         var id = sanitizeProjectId(rawId);
 
-        // Validate ID
         if (!id) {
           container.innerHTML = "<p class='text-danger'>Invalid or missing project ID.</p>";
           return;
@@ -375,7 +333,6 @@
           return;
         }
 
-        // Show loading state initially
         container.innerHTML = `
                     <div class="video-loading">
                         <i class="fas fa-spinner"></i>
@@ -383,7 +340,6 @@
                     </div>
                 `;
 
-        // Determine if this is a self-hosted video or embedded content
         var isLocalVideo = project.videoUrl.startsWith('/') ||
           project.videoUrl.startsWith('./') ||
           project.videoUrl.includes('.mp4') ||
@@ -394,7 +350,6 @@
         var videoAttributes = '';
 
         if (isLocalVideo) {
-          // Self-hosted video configuration
           videoAttributes = 'preload="metadata" playsinline disablepictureinpicture controlslist="nodownload"';
           var posterImage = project.thumbnail || generatePosterPath(project.videoUrl);
 
@@ -431,7 +386,6 @@
                         </div>
                     `;
         } else {
-          // Embedded video (YouTube, Vimeo, etc.)
           media = `
                         <div class="video-wrapper">
                             <div class="ratio">
@@ -446,7 +400,6 @@
                     `;
         }
 
-        // Build the complete video detail page
         setTimeout(function () {
           container.innerHTML = `
                         <div class="back-nav">
@@ -491,7 +444,6 @@
           if (video) {
             video.addEventListener('loadedmetadata', hideLoading);
 
-            // Add video event listeners for self-hosted videos
             if (isLocalVideo) {
               setupVideoEventListeners(video);
               setupPlayButtonOverlay(video);
@@ -506,7 +458,6 @@
       });
   }
 
-  // Handle responsive video sizing on window resize
   var windowResizeTimeout;
   window.addEventListener('resize', function () {
     clearTimeout(windowResizeTimeout);
@@ -515,34 +466,23 @@
     }, 250);
   });
 
-  // Initialize cleanup system when page loads
   setupPageCleanup();
 
-  // Initialize any special mobile video handling
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   if (isMobile) {
     console.log('Mobile device detected - adjusting video settings');
     document.body.classList.add('mobile-device');
   }
 
-  // ============================================================================
-  // OPTIONAL: EXPOSE PUBLIC API (if needed by other scripts)
-  // ============================================================================
 
-  // Create namespace if it doesn't exist
   window.ChuckPortfolio = window.ChuckPortfolio || {};
 
-  // Expose only essential functionality that other scripts might need
   window.ChuckPortfolio.projectDetail = {
-    // Example: if other scripts needed access to cleanup
     cleanup: function () {
       videoEventRegistry.cleanup();
     },
 
-    // Example: if other scripts needed to check video state
-    // isVideoPlaying: function() { /* implementation */ }
-
     version: '1.0.0'
   };
 
-})(); // IIFE ends here - everything above is now in local scope
+})();

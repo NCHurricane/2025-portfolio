@@ -1,5 +1,4 @@
 // Cat Detail Page JavaScript
-// Enhanced with namespaced IIFE pattern to prevent global pollution
 
 (function () {
     'use strict';

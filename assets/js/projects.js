@@ -1,20 +1,11 @@
-// Load and display video projects
-// Enhanced with namespaced IIFE pattern to prevent global pollution
-
+// Video projects functionality
 (function () {
   'use strict';
 
-  // ============================================================================
-  // LOCAL SCOPE - All variables and functions are now contained
-  // ============================================================================
-
-  // Local variables (no longer global)
   var projectsData = [];
   var isLoaded = false;
 
-  // Local function to render projects grid
   function renderProjectsGrid(projects, container) {
-    // Clear any existing content
     container.innerHTML = '';
 
     projects.forEach(function (project) {
@@ -33,12 +24,10 @@
     });
   }
 
-  // Local function to display error message
   function displayProjectsError(container, message) {
     container.innerHTML = `<p class='text-danger'>${message}</p>`;
   }
 
-  // Local function to load projects data
   function loadProjects() {
     var container = document.getElementById("project-grid");
 
@@ -47,7 +36,6 @@
       return;
     }
 
-    // Show loading state
     container.innerHTML = `
             <div class="col-12 text-center">
                 <div class="alert alert-info" role="alert">
@@ -64,23 +52,19 @@
         return res.json();
       })
       .then(function (projects) {
-        // Store data locally
         projectsData = projects;
         isLoaded = true;
 
-        // Validate data
         if (!Array.isArray(projects) || projects.length === 0) {
           throw new Error('No valid projects found');
         }
 
-        // Render the projects
         renderProjectsGrid(projects, container);
       })
       .catch(function (err) {
         console.error("Error loading projects:", err);
         isLoaded = false;
 
-        // Provide specific error messages
         var errorMessage;
         if (err.name === 'TypeError' && err.message.includes('fetch')) {
           errorMessage = "Unable to connect to the server. Please check your internet connection.";
@@ -96,56 +80,36 @@
       });
   }
 
-  // ============================================================================
-  // MAIN EXECUTION - Same logic, now in local scope
-  // ============================================================================
-
-  // Initialize when page loads - using DOMContentLoaded for better practice
+  // Initialize when page loads
   document.addEventListener('DOMContentLoaded', function () {
     loadProjects();
   });
 
-  // ============================================================================
-  // OPTIONAL: EXPOSE PUBLIC API (if needed by other scripts)
-  // ============================================================================
-
-  // Create namespace if it doesn't exist
+  // Public API
   window.ChuckPortfolio = window.ChuckPortfolio || {};
-
-  // Expose useful functionality for other scripts
   window.ChuckPortfolio.projects = {
-    // Reload projects if needed
     reload: function () {
       projectsData = [];
       isLoaded = false;
       loadProjects();
     },
-
-    // Get projects data (useful for other scripts)
     getProjects: function () {
-      return projectsData.slice(); // Return copy to prevent external modification
+      return projectsData.slice();
     },
-
-    // Check if projects are loaded
     isLoaded: function () {
       return isLoaded;
     },
-
-    // Get specific project by ID (useful for detail page)
     getProject: function (id) {
       return projectsData.find(function (project) {
         return project.id === id;
       });
     },
-
-    // Get projects by criteria (useful for filtering)
     getProjectsByClient: function (clientName) {
       return projectsData.filter(function (project) {
         return project.client && project.client.toLowerCase().includes(clientName.toLowerCase());
       });
     },
-
     version: '1.0.0'
   };
 
-})(); // IIFE ends here - everything above is now in local scope
+})();

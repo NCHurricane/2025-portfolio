@@ -1,53 +1,36 @@
-// Enhanced Keyboard Navigation for Chuck Copeland Portfolio
-// Provides essential accessibility features for keyboard users
-// Enhanced with namespaced IIFE pattern to prevent global pollution
+// Enhanced Keyboard Navigation
 
 (function () {
     'use strict';
 
-    // ============================================================================
-    // LOCAL SCOPE - All variables and functions are now contained
-    // ============================================================================
 
-    // Local variables (no longer global)
     var focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     var previouslyFocusedElement;
     var isInitialized = false;
 
-    // ============================================================================
-    // LOCAL FUNCTIONS - All keyboard navigation functionality
-    // ============================================================================
 
-    // Skip Navigation Enhancement
     function initSkipNavigation() {
-        // Ensure main content has proper ID for skip navigation
         var mainContent = document.getElementById('main-content');
         if (mainContent) {
-            // Make main content focusable for skip navigation
             mainContent.setAttribute('tabindex', '-1');
 
-            // Handle skip link clicks
             var skipLink = document.querySelector('.skip-link');
             if (skipLink) {
                 skipLink.addEventListener('click', function (e) {
                     e.preventDefault();
                     mainContent.focus();
-                    // Scroll to top of main content
                     mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             }
         }
     }
 
-    // Enhanced Video Keyboard Controls
     function initVideoKeyboardControls() {
         var videos = document.querySelectorAll('video');
 
         videos.forEach(function (video) {
-            // Make video focusable
             video.setAttribute('tabindex', '0');
 
-            // Add keyboard event listeners
             video.addEventListener('keydown', function (e) {
                 switch (e.code) {
                     case 'Space':
@@ -79,7 +62,6 @@
                 }
             });
 
-            // Add visual feedback for keyboard users
             video.addEventListener('focus', function () {
                 var wrapper = video.closest('.video-wrapper');
                 if (wrapper) {
@@ -96,7 +78,6 @@
         });
     }
 
-    // Enhanced Custom Video Controls Keyboard Support
     function initCustomVideoControlsKeyboard() {
         var customControls = document.querySelectorAll('.custom-video-controls');
 
@@ -105,7 +86,6 @@
             var progressBar = controls.querySelector('.progress-bar');
             var volumeSlider = controls.querySelector('.volume-slider');
 
-            // Make progress bar keyboard accessible
             if (progressBar && video) {
                 progressBar.setAttribute('tabindex', '0');
                 progressBar.setAttribute('role', 'slider');
@@ -136,14 +116,12 @@
                     }
                 });
 
-                // Update aria-valuenow during playback
                 video.addEventListener('timeupdate', function () {
                     var percent = Math.round((video.currentTime / video.duration) * 100);
                     progressBar.setAttribute('aria-valuenow', percent);
                 });
             }
 
-            // Enhanced volume slider keyboard support
             if (volumeSlider && video) {
                 volumeSlider.addEventListener('keydown', function (e) {
                     switch (e.code) {
@@ -175,23 +153,16 @@
         });
     }
 
-    // Lightbox Focus Management
     function initLightboxFocusManagement() {
-        // Override lightbox behavior if available
         if (typeof lightbox !== 'undefined') {
-            // Store original methods
             var originalStart = lightbox.start;
             var originalEnd = lightbox.end;
 
-            // Enhanced start method with focus management
             lightbox.start = function ($link) {
-                // Store currently focused element
                 previouslyFocusedElement = document.activeElement;
 
-                // Call original start method
                 originalStart.call(this, $link);
 
-                // Set up focus trap after lightbox opens
                 setTimeout(function () {
                     var lightboxElement = document.getElementById('lightbox');
                     if (lightboxElement) {
@@ -201,12 +172,9 @@
                 }, 100);
             };
 
-            // Enhanced end method with focus restoration
             lightbox.end = function () {
-                // Call original end method
                 originalEnd.call(this);
 
-                // Restore focus to previously focused element
                 if (previouslyFocusedElement) {
                     previouslyFocusedElement.focus();
                     previouslyFocusedElement = null;
@@ -215,7 +183,6 @@
         }
     }
 
-    // Focus Trap Utility
     function trapFocus(element) {
         var focusableElements = element.querySelectorAll(focusableElementsSelector);
         var firstFocusableElement = focusableElements[0];
@@ -237,7 +204,6 @@
             }
 
             if (e.key === 'Escape') {
-                // Close lightbox on escape
                 if (typeof lightbox !== 'undefined') {
                     lightbox.end();
                 }
@@ -245,7 +211,6 @@
         });
     }
 
-    // Enhanced Play Button Overlay Keyboard Support
     function initPlayButtonKeyboard() {
         var playOverlays = document.querySelectorAll('.video-play-overlay');
 
@@ -263,7 +228,6 @@
         });
     }
 
-    // Gallery Grid Keyboard Navigation Enhancement
     function initGalleryKeyboardNavigation() {
         var galleryItems = document.querySelectorAll('.gallery-item a, .video-card a, .intro-card a');
 
@@ -300,7 +264,6 @@
         });
     }
 
-    // Social Icons Keyboard Enhancement
     function initSocialIconsKeyboard() {
         var socialSections = document.querySelectorAll('.social-main, .social-cats, .social-wx, .social-motor');
 
@@ -320,7 +283,7 @@
                             if (nextLink) {
                                 nextLink.focus();
                             } else if (socialLinks[0]) {
-                                socialLinks[0].focus(); // Wrap to first
+                                socialLinks[0].focus();
                             }
                             break;
                         case 'ArrowLeft':
@@ -330,7 +293,7 @@
                             if (prevLink) {
                                 prevLink.focus();
                             } else if (socialLinks[socialLinks.length - 1]) {
-                                socialLinks[socialLinks.length - 1].focus(); // Wrap to last
+                                socialLinks[socialLinks.length - 1].focus();
                             }
                             break;
                         case 'Home':
@@ -347,12 +310,9 @@
         });
     }
 
-    // Global Escape Key Handler
     function initGlobalKeyboardHandlers() {
         document.addEventListener('keydown', function (e) {
-            // Global escape key handler
             if (e.key === 'Escape') {
-                // Close any open modals, overlays, etc.
                 var openLightbox = document.getElementById('lightbox');
                 if (openLightbox && openLightbox.style.display !== 'none') {
                     if (typeof lightbox !== 'undefined') {
@@ -363,7 +323,6 @@
         });
     }
 
-    // Add Keyboard Hints to Video Elements
     function addKeyboardHints() {
         var videos = document.querySelectorAll('video');
         videos.forEach(function (video) {
@@ -385,25 +344,17 @@
         });
     }
 
-    // ============================================================================
-    // INITIALIZATION FUNCTION
-    // ============================================================================
-
-    // Initialize all keyboard navigation features
     function init() {
-        // Prevent double initialization
         if (isInitialized) {
             console.warn('Keyboard navigation already initialized');
             return;
         }
 
-        // Wait for DOM to be ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
             return;
         }
 
-        // Initialize all features
         initSkipNavigation();
         initVideoKeyboardControls();
         initCustomVideoControlsKeyboard();
@@ -418,23 +369,13 @@
         console.log('Enhanced keyboard navigation initialized');
     }
 
-    // ============================================================================
-    // MAIN EXECUTION
-    // ============================================================================
 
-    // Start initialization immediately
     init();
 
-    // ============================================================================
-    // PUBLIC API - Expose essential functionality for other scripts
-    // ============================================================================
 
-    // Create namespace if it doesn't exist
     window.ChuckPortfolio = window.ChuckPortfolio || {};
 
-    // Expose keyboard navigation functionality
     window.ChuckPortfolio.keyboardNavigation = {
-        // Allow manual re-initialization (useful for dynamic content)
         reinitialize: function () {
             console.log('Re-initializing keyboard navigation for dynamic content');
             initVideoKeyboardControls();
@@ -445,19 +386,16 @@
             addKeyboardHints();
         },
 
-        // Allow other scripts to check if initialized
         isInitialized: function () {
             return isInitialized;
         },
 
-        // Allow other scripts to manually trap focus (useful for custom modals)
         trapFocus: function (element) {
             if (element) {
                 trapFocus(element);
             }
         },
 
-        // Allow other scripts to access focusable elements selector
         getFocusableSelector: function () {
             return focusableElementsSelector;
         },
@@ -465,4 +403,4 @@
         version: '1.0.0'
     };
 
-})(); // IIFE ends here - everything above is now in local scope
+})(); 

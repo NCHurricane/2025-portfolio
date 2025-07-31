@@ -1,16 +1,9 @@
-// Enhanced gallery.js with comprehensive error handling
-// Uses namespaced IIFE pattern to prevent global pollution
-
+// Photo gallery functionality
 (function () {
   'use strict';
 
-  // ============================================================================
-  // LOCAL SCOPE - All variables and functions are now contained
-  // ============================================================================
-
-  // Local functions (no longer global)
   function displayGalleryError(container, message, showRetry) {
-    showRetry = showRetry !== false; // Default to true
+    showRetry = showRetry !== false;
 
     var retryButton = showRetry ? `
             <button class="btn btn-outline-warning mt-3" onclick="location.reload()">
@@ -35,7 +28,6 @@
     }
 
     var validImages = images.filter(function (img) {
-      // Check for required fields
       return img &&
         typeof img.thumb === 'string' && img.thumb.length > 0 &&
         typeof img.full === 'string' && img.full.length > 0 &&
@@ -80,15 +72,10 @@
     return col;
   }
 
-  // ============================================================================
-  // MAIN EXECUTION - Same logic, now in local scope
-  // ============================================================================
-
-  // Main gallery loading function with error handling
+  // Main gallery loading
   var galleryContainer = document.getElementById("galleryGrid");
 
   if (galleryContainer) {
-    // Show initial loading state
     galleryContainer.innerHTML = `
             <div class="col-12 text-center">
                 <div class="alert alert-info" role="alert">
@@ -105,14 +92,11 @@
         return response.json();
       })
       .then(function (images) {
-        // Clear loading state
         galleryContainer.innerHTML = '';
 
         try {
-          // Validate and filter the image data
           var validImages = validateImageData(images);
 
-          // Create gallery items
           validImages.forEach(function (img) {
             try {
               var galleryItem = createGalleryItem(img);
@@ -122,7 +106,6 @@
             }
           });
 
-          // Check if any items were actually created
           if (galleryContainer.children.length === 0) {
             throw new Error('No gallery items could be created');
           }
@@ -138,7 +121,6 @@
       .catch(function (err) {
         console.error("Failed to load gallery:", err);
 
-        // Provide specific error messages based on error type
         var errorMessage;
         if (err.name === 'TypeError' && err.message.includes('fetch')) {
           errorMessage = "Unable to connect to the server. Please check your internet connection.";
@@ -154,20 +136,10 @@
       });
   }
 
-  // ============================================================================
-  // OPTIONAL: EXPOSE PUBLIC API (only if needed by other scripts)
-  // ============================================================================
-
-  // Create namespace if it doesn't exist
+  // Public API
   window.ChuckPortfolio = window.ChuckPortfolio || {};
-
-  // Expose only what's needed globally (in this case, probably nothing)
   window.ChuckPortfolio.gallery = {
-    // Example: if other scripts needed to trigger gallery reload
-    // reload: function() { /* implementation */ }
-
-    // Most likely you won't need to expose anything for gallery.js
-    version: '1.0.0' // Just for demo
+    version: '1.0.0'
   };
 
-})(); // IIFE ends here - everything above is now in local scope
+})();
