@@ -1862,8 +1862,21 @@ select:focus-visible {
   color: #414141 !important;
 }
 .glightbox-clean .gslide-title {
+    display: block;
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 1rem; 
   color: #414141 !important;
 }
+
+.glightbox-clean .gslide-desc {
+  display: block;
+  margin: 0;
+  line-height: 1.25;
+  font-size: .95rem;
+  color: #d0d0d0;
+}
+
 .glightbox-clean .gslide-description {
   background: none;
   color: #d0d0d0 !important;
@@ -1877,13 +1890,6 @@ select:focus-visible {
   color: rgb(210, 210, 210) !important;
 }
 
-.glightbox-clean .gdesc {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0)
-  ) !important;
-}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {

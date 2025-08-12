@@ -90,23 +90,15 @@
         // Format the date for display
         var photoDate = formatPhotoDate(photo.date);
 
-        // Build rich caption (HTML allowed by GLightbox in data-description)
-        var fullCaption =
-          "<h5>" +
-          (photo.caption || "") +
-          "</h5>" +
-          '<p class="lb-caption">' + 
-          photoDate +
-          " &bull; " +
-          catName +
-          "</p>";
-
         // Build anchor and children via DOM to avoid escaping issues; use data-description for HTML captions
         var a = document.createElement("a");
         a.href = photo.full;
         a.className = "glightbox";
         a.dataset.gallery = "cat-gallery";
-        a.dataset.description = fullCaption; // HTML allowed by GLightbox
+
+        // Set GLightbox caption fields as plain strings
+        a.dataset.title = photo.caption || "";
+        a.dataset.description = photoDate + " • " + catName;
 
         var pic = document.createElement("div");
         pic.className = "gallery-pic";
