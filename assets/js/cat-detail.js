@@ -97,8 +97,16 @@
         a.dataset.gallery = "cat-gallery";
 
         // Set GLightbox caption fields as plain strings
-        a.dataset.title = photo.caption || "";
-        a.dataset.description = photoDate + " • " + catName;
+        const captionHTML = `
+          <div class="glightbox-custom-caption">
+            <h5>${photo.caption || ""}</h5>
+            <p>${photoDate} • ${catName}</p>
+          </div>
+        `;
+
+        a.dataset.description = captionHTML;
+
+        a.dataset.title = "";
 
         var pic = document.createElement("div");
         pic.className = "gallery-pic";
@@ -137,36 +145,37 @@
           selector: "a.glightbox",
           touchNavigation: true,
           loop: false,
+          zoomable: false,
         });
       }
 
       const lb = window.nchurricatsLB;
 
-      // Helper: mark a slide as portrait or not
-      function markPortrait(slideNode) {
+      // Helper to move the caption HTML into the image container
+      function moveCaptionInside(slideNode) {
         if (!slideNode) return;
-        const img = slideNode.querySelector(".gslide-image img");
-        if (!img) return;
+        const media = slideNode.querySelector(".gslide-image, .gslide-media");
+        const desc = slideNode.querySelector(".gslide-description");
+        if (!media || !desc) return;
 
-        const apply = () => {
-          // Toggle class on the slide container
-          if (img.naturalHeight > img.naturalWidth) {
-            slideNode.classList.add("is-portrait");
-          } else {
-            slideNode.classList.remove("is-portrait");
-          }
-        };
-
-        if (img.complete) apply();
-        else img.addEventListener("load", apply, { once: true });
+        // Our custom HTML lives inside the description
+        const custom = desc.querySelector(".glightbox-custom-caption");
+        if (custom) {
+          media.appendChild(custom); // physically move it under the image
+          desc.style.display = "none"; // hide the default description panel
+        }
       }
 
-      // When a slide is loaded/changed, (re)mark orientation
-      lb.on && lb.on("slide_after_load", ({ slide }) => markPortrait(slide));
+      // Hook into GLightbox events
       lb.on &&
-        lb.on("slide_changed", ({ current }) =>
-          markPortrait(current && current.slideNode)
-        );
+        lb.on("slide_after_load", ({ slide }) => {
+          moveCaptionInside(slide);
+        });
+
+      lb.on &&
+        lb.on("slide_changed", ({ current }) => {
+          moveCaptionInside(current && current.slideNode);
+        });
     } else {
       console.warn("GLightbox not found. Did you include glightbox.min.js?");
     }
