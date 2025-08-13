@@ -73,7 +73,7 @@
     years.forEach(function (year) {
       // Year header
       var yearHeader = document.createElement("div");
-      yearHeader.className = "col-12 mb-3 mt-4";
+      yearHeader.className = "col-12 mb-3 mt-4 cat-year";
       yearHeader.innerHTML =
         '\n            <div class="d-flex align-items-center">\n              <h3 class="me-2 mb-0">' +
         year +
@@ -100,7 +100,7 @@
         const captionHTML = `
           <div class="glightbox-custom-caption">
             <h5>${photo.caption || ""}</h5>
-            <p>${photoDate} • ${catName}</p>
+            <p>${photoDate}</p>
           </div>
         `;
 
@@ -152,30 +152,89 @@
       const lb = window.nchurricatsLB;
 
       // Helper to move the caption HTML into the image container
-      function moveCaptionInside(slideNode) {
+      function ensureCaptionOverlay(slideNode) {
         if (!slideNode) return;
+
         const media = slideNode.querySelector(".gslide-image, .gslide-media");
         const desc = slideNode.querySelector(".gslide-description");
-        if (!media || !desc) return;
+        if (!media) return;
 
-        // Our custom HTML lives inside the description
-        const custom = desc.querySelector(".glightbox-custom-caption");
-        if (custom) {
-          media.appendChild(custom); // physically move it under the image
-          desc.style.display = "none"; // hide the default description panel
+        // If we already mounted one under the image, keep it and hide default panel
+        const existing = media.querySelector(".glightbox-custom-caption");
+        if (existing) {
+          if (desc) desc.style.display = "none";
+          return;
         }
+
+        // Try to reuse custom HTML rendered in the default description
+        let custom = desc
+          ? desc.querySelector(".glightbox-custom-caption")
+          : null;
+
+        // If not present, derive title + meta from default text (mobile often puts all text in one <p>)
+        if (!custom) {
+          const titleEl = desc && desc.querySelector(".gslide-title");
+          const textEl = desc && desc.querySelector(".gslide-desc");
+          const rawTitle = titleEl ? titleEl.textContent.trim() : "";
+          const rawText = textEl ? textEl.textContent.trim() : "";
+
+          // Parse into title/meta
+          let title = "";
+          let meta = "";
+
+          if (rawTitle) {
+            title = rawTitle;
+            meta = rawText;
+          } else {
+            // Heuristics: split by newline first; else try to split around a date + " • "
+            const lines = rawText
+              .split(/\r?\n/)
+              .map((s) => s.trim())
+              .filter(Boolean);
+            if (lines.length > 1) {
+              title = lines[0];
+              meta = lines.slice(1).join(" ");
+            } else {
+              // Try: "<Title> <Month DD, YYYY • Cat>"
+              const m = rawText.match(
+                /^(.+?)\s+(\w+\s+\d{1,2},\s+\d{4}\s+•\s+.+)$/
+              );
+              if (m) {
+                title = m[1];
+                meta = m[2];
+              } else {
+                // fallback: treat whole thing as meta if we can’t confidently split
+                meta = rawText;
+              }
+            }
+          }
+
+          // If we have nothing at all, bail
+          if (!title && !meta) {
+            if (desc) desc.style.display = "none";
+            return;
+          }
+
+          // Build overlay
+          custom = document.createElement("div");
+          custom.className = "glightbox-custom-caption";
+          custom.innerHTML = `${title ? `<h5>${title}</h5>` : ""}${
+            meta ? `<p>${meta}</p>` : ""
+          }`;
+        }
+
+        // Mount inside the image and hide the default panel
+        media.appendChild(custom);
+        if (desc) desc.style.display = "none";
       }
 
-      // Hook into GLightbox events
+      // Fire on load and on navigation (mobile needs both)
       lb.on &&
-        lb.on("slide_after_load", ({ slide }) => {
-          moveCaptionInside(slide);
-        });
-
+        lb.on("slide_after_load", ({ slide }) => ensureCaptionOverlay(slide));
       lb.on &&
-        lb.on("slide_changed", ({ current }) => {
-          moveCaptionInside(current && current.slideNode);
-        });
+        lb.on("slide_changed", ({ current }) =>
+          ensureCaptionOverlay(current && current.slideNode)
+        );
     } else {
       console.warn("GLightbox not found. Did you include glightbox.min.js?");
     }

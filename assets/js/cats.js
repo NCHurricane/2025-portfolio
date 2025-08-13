@@ -67,7 +67,7 @@
 
         catsData.forEach(function (cat) {
             var col = document.createElement('div');
-            col.className = 'col-md-6 mb-4';
+            col.className = 'col-6 mb-4';
 
             var catUrlName = cat.name.toLowerCase().replace(/\s+/g, '-');
 

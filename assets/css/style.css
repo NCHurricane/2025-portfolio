@@ -1804,6 +1804,14 @@ select:focus-visible {
 .goverlay {
   background: rgba(0, 0, 0, 0.6);
 }
+.glightbox-mobile .goverlay {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ) !important; /* or whatever color/opacity you want */
+}
 
 /* Sizing */
 .gslide-image img {
@@ -1818,8 +1826,14 @@ select:focus-visible {
   border-radius: 8px; /* optional: rounded corners */
 }
 
-.glightbox-clean .gslide-image {
-  max-height: calc(100vh - 60px) !important;
+.glightbox-container .gslide-image img {
+  max-width: 80vw !important; /* Set image width to 100% of viewport width */
+  max-height: 80vh !important; /* Maintain aspect ratio */
+  object-fit: contain !important; /* Resizes to fit while maintaining aspect ratio */
+}
+
+.glightbox-mobile .glightbox-container .gslide-description {
+  display: none !important;
 }
 
 /* Watermark overlay */
@@ -1845,9 +1859,9 @@ select:focus-visible {
 
 .glightbox-custom-caption {
   position: absolute;
-  bottom: -50px;
+  top: 10px;
   left: 0;
-  width: 100%;
+  width: 90%;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 8px 12px;
@@ -1865,21 +1879,15 @@ select:focus-visible {
   line-height: 1.25;
 }
 
-/* Portrait adjustments */
-/* .gslide.is-portrait .gslide-image,
-.gslide.is-portrait .gslide-image img {
-  max-width: 80vw !important;
-  max-height: 70vh !important;
-  width: auto !important;
-  height: auto !important;
+/* Never show GLightbox's default description panel (prevents layout shift) */
+.glightbox-container .gslide-description { 
+  display: none !important; 
 }
 
-/* More room for captions on portrait */
-/* .gslide.is-portrait,
-.glightbox-mobile .glightbox-container {
-  background: none;
-  color: #eee !important;
-} */ */
+/* Mobile variant just in case the mobile skin changes selector stacking */
+.glightbox-mobile .glightbox-container .gslide-description { 
+  display: none !important; 
+}
 
 .gslide-title {
   display: block;
@@ -1895,6 +1903,19 @@ select:focus-visible {
     max-height: 85vh;
     max-width: 90vw;
   }
+
+  .glightbox-custom-caption h5 {
+    font-size: 1rem;
+    color: #ffc107;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .glightbox-custom-caption p {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.25;
+  }
   .gclose {
     width: 32px;
     height: 32px;
@@ -1905,21 +1926,21 @@ select:focus-visible {
     width: 16px;
     height: 16px;
   }
-}
-.gslide-image img {
-  max-height: 85vh;
-  max-width: 90vw;
-}
+  .gslide-image img {
+    max-height: 85vh;
+    max-width: 90vw;
+  }
 
-.gclose {
-  width: 32px;
-  height: 32px;
-  top: 10px;
-  right: 10px;
-}
-.gclose svg {
-  width: 16px;
-  height: 16px;
+  .gclose {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+  }
+  .gclose svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* Close button */
@@ -2815,6 +2836,13 @@ section.video-cat {
   background-position: bottom center;
 }
 
+.cat-gallery .cat-year {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+    color: #ffc107;
+
+}
+
 @keyframes rainbow-memorial {
   0% {
     background-position: 0% 50%;
@@ -3097,6 +3125,12 @@ section.video-cat {
   .cat-bio {
     font-size: 0.9rem;
   }
+  .cat-detail-info h6 {
+    font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
 }
 
 @media (max-width: 576px) {
